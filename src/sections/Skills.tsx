@@ -85,28 +85,29 @@ export default function Skills() {
   }, []);
 
   return (
-    <section id="skills" className="relative bg-gradient-to-b from-white via-emerald-50 to-white py-32 px-6 overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute top-40 -left-40 w-96 h-96 bg-emerald-300 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-pulse"></div>
-      <div className="absolute top-1/2 -right-40 w-96 h-96 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-pulse" style={{ animationDelay: '2s' }}></div>
+    <section id="skills" className="relative bg-gradient-to-b from-white to-emerald-50/50 py-32 px-6 overflow-hidden">
+      {/* Animated background with gradient orbs */}
+      <div className="absolute top-0 -left-32 w-96 h-96 bg-emerald-400/20 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
+      <div className="absolute top-1/2 -right-32 w-96 h-96 bg-emerald-300/15 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute bottom-0 left-1/3 w-96 h-96 bg-emerald-200/10 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Header Section */}
-        <div className="mb-24 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 border border-emerald-200 mb-6 animate-slideInDown">
-            <Code2 size={18} className="text-emerald-600" />
-            <span className="text-sm font-bold text-emerald-700">TECHNICAL STACK</span>
+        {/* Premium Header */}
+        <div className="mb-20 text-center animate-slideInDown">
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-emerald-100 to-emerald-50 border-2 border-emerald-200/50 mb-6 shadow-lg shadow-emerald-200/20">
+            <Code2 size={20} className="text-emerald-600" />
+            <span className="text-sm font-black text-emerald-700 tracking-wider">MY TECH STACK</span>
           </div>
-          <h2 className="text-6xl md:text-7xl font-black bg-gradient-to-r from-emerald-900 via-emerald-800 to-emerald-700 bg-clip-text text-transparent mb-6 leading-tight">
-            Skills & Technologies
+          <h2 className="text-5xl md:text-7xl font-black bg-gradient-to-r from-emerald-900 via-emerald-800 to-emerald-700 bg-clip-text text-transparent mb-6 leading-tight">
+            Professional Skills
           </h2>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-            Complete arsenal of modern technologies and tools I use to build scalable, performant web applications
+          <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+            Specialized in building modern, scalable web applications using cutting-edge technologies and best practices
           </p>
         </div>
 
-        {/* Skills Grid - Single Row Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        {/* Skills Grid - Showcase Style */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
           {skillGroups.map((group, i) => (
             <div
               key={group.category}
@@ -114,102 +115,103 @@ export default function Skills() {
                 refs.current[i] = el;
               }}
               className={visible[i] ? "animate-slideInUp" : "opacity-0"}
-              style={{ animationDelay: `${i * 0.12}s` }}
+              style={{ animationDelay: `${i * 0.15}s` }}
             >
-              {/* Category Card - Modern Design */}
-              <div className="group relative h-full rounded-2xl border border-emerald-200 bg-gradient-to-br from-white via-emerald-50/30 to-white p-7 hover:border-emerald-400 transition-all duration-500 hover:shadow-2xl hover:shadow-emerald-200/40 hover:-translate-y-3">
-                {/* Glow effect on hover */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-emerald-600/0 to-emerald-500/0 group-hover:from-emerald-600/5 group-hover:to-emerald-500/5 transition-all duration-500 pointer-events-none"></div>
+              {/* Premium Skill Card */}
+              <div className="group relative h-full bg-white rounded-3xl border-2 border-emerald-100 overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 hover:border-emerald-300">
+                {/* Animated top border gradient */}
+                <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-emerald-600 via-emerald-500 to-transparent group-hover:via-emerald-400 transition-all duration-500"></div>
 
-                {/* Category Icon with Gradient */}
-                <div className="mb-6 relative z-10">
-                  <div className="inline-flex p-4 rounded-xl bg-gradient-to-br from-emerald-600 to-emerald-500 text-white shadow-lg group-hover:scale-110 group-hover:shadow-emerald-400/50 transition-all duration-300">
-                    <Folder size={28} />
+                {/* Background pattern */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-5 bg-gradient-to-br from-emerald-600 to-emerald-500 transition-opacity duration-500"></div>
+
+                <div className="relative p-8 md:p-10">
+                  {/* Icon Header */}
+                  <div className="flex items-start justify-between mb-8">
+                    <div className="p-4 rounded-2xl bg-gradient-to-br from-emerald-600 to-emerald-500 text-white shadow-xl group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-emerald-500/40 transition-all duration-300">
+                      <Folder size={32} />
+                    </div>
+                    <div className="text-right">
+                      <div className="text-4xl font-black text-emerald-600 group-hover:text-emerald-700 transition-colors">
+                        {group.skills.length}
+                      </div>
+                      <p className="text-xs font-semibold text-emerald-600/70 mt-1">Skills</p>
+                    </div>
+                  </div>
+
+                  {/* Category Title */}
+                  <h3 className="text-3xl font-black text-emerald-900 mb-2">
+                    {group.category.replace('/', '')}
+                  </h3>
+                  <p className="text-emerald-600 font-semibold mb-8">
+                    {group.category === 'frontend/' ? 'Frontend technologies' : group.category === 'backend/' ? 'Backend frameworks' : group.category === 'database/' ? 'Database systems' : 'Development tools'}
+                  </p>
+
+                  {/* Skills Showcase */}
+                  <div className="space-y-3">
+                    {group.skills.map(({ name, icon: Icon, color }) => (
+                      <div
+                        key={name}
+                        className="group/skill flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-gray-50 to-emerald-50/30 hover:from-emerald-50 hover:to-emerald-100/30 border border-emerald-100/50 hover:border-emerald-300/50 transition-all duration-300 cursor-default"
+                      >
+                        <div
+                          className="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center shadow-md group-hover/skill:scale-110 group-hover/skill:shadow-lg transition-all duration-300"
+                          style={{ backgroundColor: `${color}15` }}
+                        >
+                          <Icon
+                            size={24}
+                            style={{ color }}
+                            className="transition-all duration-300"
+                          />
+                        </div>
+                        <div className="flex-1">
+                          <span className="text-base font-bold text-gray-900 group-hover/skill:text-emerald-700 transition-colors duration-300">
+                            {name}
+                          </span>
+                          <div className="h-1 w-16 bg-gradient-to-r from-emerald-400 to-emerald-200 rounded-full mt-1.5 opacity-0 group-hover/skill:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
-
-                {/* Category Title */}
-                <h3 className="text-2xl font-bold text-emerald-900 mb-2 relative z-10">
-                  {group.category.replace('/', '')}
-                </h3>
-                <p className="text-sm text-emerald-600 font-semibold mb-6 relative z-10">
-                  {group.skills.length} skills
-                </p>
-
-                {/* Skills List */}
-                <div className="space-y-2 relative z-10">
-                  {group.skills.map(({ name, icon: Icon, color }) => (
-                    <div
-                      key={name}
-                      className="group/skill flex items-center gap-3 p-3 rounded-lg bg-white/50 hover:bg-white border border-emerald-100 hover:border-emerald-300 transition-all duration-300 cursor-default"
-                    >
-                      <div
-                        className="flex-shrink-0 p-2 rounded-lg bg-white group-hover/skill:scale-110 transition-transform duration-300"
-                        style={{ backgroundColor: `${color}15` }}
-                      >
-                        <Icon
-                          size={18}
-                          style={{ color }}
-                          className="transition-all duration-300"
-                        />
-                      </div>
-                      <span className="text-sm font-medium text-gray-800 group-hover/skill:text-emerald-700 transition-colors duration-300 truncate">
-                        {name}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Decorative corner badge */}
-                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-emerald-600/10 to-transparent rounded-bl-2xl pointer-events-none"></div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Divider */}
-        <div className="h-px bg-gradient-to-r from-transparent via-emerald-300 to-transparent mb-16"></div>
-
-        {/* Summary Stats - Enhanced */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="group relative rounded-2xl border border-emerald-200 bg-gradient-to-br from-emerald-50 to-white p-8 hover:border-emerald-400 hover:shadow-xl transition-all duration-500 text-center hover:-translate-y-2">
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-emerald-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-            <div className="text-5xl font-black text-emerald-600 mb-2 relative z-10">
-              {skillGroups.reduce((sum, g) => sum + g.skills.length, 0)}+
-            </div>
-            <p className="text-lg font-bold text-emerald-900 relative z-10">
-              Technologies
-            </p>
-            <p className="text-sm text-gray-600 mt-2 relative z-10">
-              Expert level proficiency
-            </p>
+        {/* Decorative Divider */}
+        <div className="relative h-px bg-gradient-to-r from-transparent via-emerald-300 to-transparent mb-20">
+          <div className="absolute left-1/2 -translate-x-1/2 -top-3 px-4 bg-white">
+            <div className="w-2 h-2 rounded-full bg-emerald-400 shadow-lg shadow-emerald-400/50"></div>
           </div>
+        </div>
 
-          <div className="group relative rounded-2xl border border-emerald-200 bg-gradient-to-br from-emerald-50 to-white p-8 hover:border-emerald-400 hover:shadow-xl transition-all duration-500 text-center hover:-translate-y-2">
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-emerald-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-            <div className="text-5xl font-black text-emerald-600 mb-2 relative z-10">
-              {skillGroups.length}
-            </div>
-            <p className="text-lg font-bold text-emerald-900 relative z-10">
-              Categories
-            </p>
-            <p className="text-sm text-gray-600 mt-2 relative z-10">
-              Full stack development
-            </p>
-          </div>
+        {/* Stats Section - Premium */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[
+            { value: `${skillGroups.reduce((sum, g) => sum + g.skills.length, 0)}+`, label: 'Technologies', desc: 'Mastered & actively used' },
+            { value: `${skillGroups.length}`, label: 'Categories', desc: 'Full-stack coverage' },
+            { value: '2+', label: 'Years', desc: 'Professional experience' }
+          ].map((stat, i) => (
+            <div
+              key={i}
+              className="group relative bg-white rounded-2xl border-2 border-emerald-100 p-8 text-center hover:border-emerald-400 hover:shadow-xl transition-all duration-500 hover:-translate-y-3"
+              style={{ animationDelay: `${i * 0.1}s` }}
+            >
+              {/* Top accent line */}
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-emerald-500 to-transparent group-hover:via-emerald-400 transition-all duration-500"></div>
 
-          <div className="group relative rounded-2xl border border-emerald-200 bg-gradient-to-br from-emerald-50 to-white p-8 hover:border-emerald-400 hover:shadow-xl transition-all duration-500 text-center hover:-translate-y-2">
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-emerald-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-            <div className="text-5xl font-black text-emerald-600 mb-2 relative z-10">
-              2+
+              <div className="text-5xl md:text-6xl font-black bg-gradient-to-r from-emerald-600 to-emerald-500 bg-clip-text text-transparent mb-3">
+                {stat.value}
+              </div>
+              <h4 className="text-lg font-bold text-emerald-900 mb-1">
+                {stat.label}
+              </h4>
+              <p className="text-sm text-gray-600">
+                {stat.desc}
+              </p>
             </div>
-            <p className="text-lg font-bold text-emerald-900 relative z-10">
-              Years
-            </p>
-            <p className="text-sm text-gray-600 mt-2 relative z-10">
-              Professional experience
-            </p>
-          </div>
+          ))}
         </div>
       </div>
     </section>
