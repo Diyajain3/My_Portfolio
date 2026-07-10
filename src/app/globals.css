@@ -2,6 +2,80 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Color Variables */
+:root {
+  --primary: #059669;
+  --primary-light: #10b981;
+  --primary-lighter: #34d399;
+  --primary-dark: #047857;
+  --primary-darker: #065f46;
+  --accent: #6366f1;
+  --accent-light: #818cf8;
+  --secondary: #f3f4f6;
+  --text-dark: #1f2937;
+  --text-light: #6b7280;
+  --border-light: #e5e7eb;
+}
+
+/* Animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.6);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes rotateBorder {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @keyframes spin-slow {
   from {
     transform: rotate(0deg);
@@ -14,30 +88,52 @@
 .animate-spin-slow {
   animation: spin-slow 8s linear infinite;
 }
+
+.animate-slideInUp {
+  animation: slideInUp 0.6s ease-out;
+}
+
+.animate-slideInDown {
+  animation: slideInDown 0.6s ease-out;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Photo Frame */
 .photo-frame {
   position: relative;
   width: 300px;
   height: 420px;
   border-radius: 24px;
   overflow: hidden;
+  animation: slideInUp 0.8s ease-out;
 }
 
-/* Rotating gradient */
 .photo-frame::before {
   content: "";
   position: absolute;
   inset: -100%;
   background: conic-gradient(
     from 0deg,
-    #16a34a,
-    #4ade80,
-    #bbf7d0,
-    #16a34a
+    #059669,
+    #10b981,
+    #34d399,
+    #059669
   );
   animation: rotateBorder 4s linear infinite;
+  transition: all 0.3s ease;
 }
 
-/* White inner card */
+.photo-frame:hover::before {
+  animation-duration: 3s;
+}
+
 .photo-frame::after {
   content: "";
   position: absolute;
@@ -47,43 +143,19 @@
   z-index: 1;
 }
 
-/* Image */
 .photo {
   position: absolute !important;
   inset: 8px !important;
   border-radius: 16px;
   z-index: 2;
+  transition: transform 0.3s ease;
 }
 
-@keyframes rotateBorder {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.photo-frame:hover .photo {
+  transform: scale(1.05);
 }
 
 /* Timeline */
-
-.timeline {
-  position: relative;
-  max-width: 850px;
-  margin: auto;
-}
-
-.timeline::before {
-  content: "";
-  position: absolute;
-  left: 35px;
-  top: 0;
-  width: 4px;
-  height: 100%;
-  background: #15803d;
-}
-
-/* ================= EDUCATION TIMELINE ================= */
-
 .timeline {
   position: relative;
   max-width: 900px;
@@ -92,7 +164,6 @@
   padding-bottom: 40px;
 }
 
-/* Vertical Line */
 .timeline::before {
   content: "";
   position: absolute;
@@ -100,11 +171,11 @@
   top: 0;
   width: 4px;
   height: 100%;
-  background: #16a34a;
+  background: linear-gradient(to bottom, #059669, #10b981, #34d399);
   border-radius: 20px;
+  transition: all 0.3s ease;
 }
 
-/* Moving Animated Dot */
 .moving-dot {
   position: absolute;
   left: 25px;
@@ -112,72 +183,107 @@
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: #22c55e;
+  background: #10b981;
   border: 4px solid white;
-  box-shadow:
-    0 0 12px #22c55e,
-    0 0 25px #4ade80;
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.6), 0 0 32px rgba(16, 185, 129, 0.3);
   z-index: 20;
+  animation: pulse-glow 2s ease-in-out infinite;
 }
 
-/* Each Education Item */
 .timeline-item {
   position: relative;
   display: flex;
   align-items: center;
   margin-bottom: 70px;
+  animation: slideInUp 0.6s ease-out backwards;
 }
 
-/* Fixed Dot */
+.timeline-item:nth-child(1) { animation-delay: 0.1s; }
+.timeline-item:nth-child(2) { animation-delay: 0.2s; }
+.timeline-item:nth-child(3) { animation-delay: 0.3s; }
+
 .dot {
   width: 22px;
   height: 22px;
-  background: #166534;
-  border: 5px solid #dcfce7;
+  background: #059669;
+  border: 5px solid #d1fae5;
   border-radius: 50%;
   margin-left: -46px;
   z-index: 10;
+  transition: all 0.3s ease;
 }
 
-/* Card */
+.timeline-item:hover .dot {
+  background: #10b981;
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.5);
+  transform: scale(1.2);
+}
+
 .edu-card {
   margin-left: 35px;
   width: 80%;
   background: white;
-  border-radius: 18px;
-  padding: 24px;
-  box-shadow: 0 10px 30px rgba(22, 101, 52, 0.15);
-  transition: all 0.35s ease;
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.15);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
 }
 
-/* Hover */
+.edu-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(to right, #059669, #10b981, #34d399);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
 .edu-card:hover {
-  transform: translateX(12px);
-  box-shadow: 0 18px 45px rgba(22, 101, 52, 0.25);
+  transform: translateX(12px) translateY(-8px);
+  box-shadow: 0 12px 40px rgba(16, 185, 129, 0.25);
+  border-color: rgba(16, 185, 129, 0.3);
 }
 
-/* Heading */
+.edu-card:hover::before {
+  transform: scaleX(1);
+}
+
 .edu-card h2 {
-  color: #166534;
+  color: #059669;
   font-size: 1.5rem;
   font-weight: 700;
+  transition: color 0.3s ease;
 }
 
-/* School */
+.edu-card:hover h2 {
+  color: #10b981;
+}
+
 .edu-card h3 {
   margin-top: 8px;
-  color: #4b5563;
+  color: #6b7280;
   font-size: 1rem;
+  transition: color 0.3s ease;
 }
 
-/* Board & Percentage */
 .edu-card p {
-  color: #15803d;
+  color: #059669;
   font-weight: 600;
   margin-top: 8px;
+  transition: color 0.3s ease;
 }
 
-/* Responsive */
+.edu-card:hover p {
+  color: #10b981;
+}
+
 @media (max-width: 768px) {
   .timeline {
     padding-left: 45px;
@@ -189,16 +295,19 @@
 
   .moving-dot {
     left: 11px;
-    
   }
 
   .dot {
     margin-left: -32px;
-   
   }
 
   .edu-card {
     width: 100%;
     margin-left: 20px;
+  }
+
+  .photo-frame {
+    width: 250px;
+    height: 350px;
   }
 }
