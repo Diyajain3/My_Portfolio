@@ -3,7 +3,8 @@
 const navLinks = [
   { name: "Home", href: "#hero" },
   { name: "Education", href: "#education" },
-  {name:"Services",href:"#services"},
+  { name: "Skills", href: "#skills" },
+  { name: "Services", href: "#services" },
   { name: "Profiles", href: "#profile" },
   { name: "Projects", href: "#projects" },
   { name: "Experience", href: "#experience" },
@@ -41,16 +42,7 @@ export default function Navbar() {
             ))}
           </ul>
 
-          {/* Resume button */}
-          <a 
-            href="https://drive.google.com/file/d/18xJDvmKCIYnMFQ8UDu0qaTIf_3FFQTLQ/view"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden md:block group relative bg-gradient-to-r from-emerald-600 to-emerald-500 text-white font-semibold px-6 py-2.5 rounded-full hover:from-emerald-700 hover:to-emerald-600 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-400/50 hover:scale-105 active:scale-95 overflow-hidden"
-          >
-            <span className="relative z-10">Resume</span>
-            <span className="absolute inset-0 bg-gradient-to-r from-emerald-700 to-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"></span>
-          </a>
+
 
           {/* Mobile menu button */}
           <button className="md:hidden group text-emerald-800 text-3xl font-bold hover:text-emerald-600 transition-colors duration-300">
