@@ -53,22 +53,26 @@ export default function Experience() {
   }, []);
 
   return (
-    <section className="relative w-full py-24 px-6 bg-ink">
-      <div className="max-w-3xl mx-auto">
+    <section className="relative bg-gradient-to-b from-white via-emerald-50 to-emerald-100 py-24 px-6 overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute top-40 left-20 w-96 h-96 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-pulse"></div>
+      <div className="absolute -bottom-20 right-20 w-96 h-96 bg-emerald-300 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-pulse" style={{ animationDelay: '2s' }}></div>
+
+      <div className="max-w-3xl mx-auto relative z-10">
         {/* Header */}
-        <div className="mb-16">
-          <p className="text-sm mb-3 tracking-widest uppercase text-accent font-mono">
-            $ git log --experience
-            <span className="animate-blink text-accent">▍</span>
-          </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-cream font-display">
+        <div className="mb-16 text-center">
+          <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent mb-4 animate-slideInDown">
             Experience
           </h2>
+          <p className="text-gray-700 text-lg">
+            Professional development experience and internships
+          </p>
         </div>
 
         {/* Timeline */}
-        <div className="relative pl-10">
-          <div className="animate-growLine origin-top absolute left-[7px] top-2 bottom-2 w-[2px] bg-line" />
+        <div className="relative pl-8">
+          {/* Vertical line */}
+          <div className="absolute left-3 top-0 bottom-0 w-1 bg-gradient-to-b from-emerald-600 via-emerald-400 to-emerald-200 rounded-full"></div>
 
           {expdata.map((exp, i) => (
             <div
@@ -76,42 +80,47 @@ export default function Experience() {
               ref={(el) => {
                 refs.current[i] = el;
               }}
-              className="relative mb-14 last:mb-0"
+              className="relative mb-12 last:mb-0"
             >
               <div
-                className={`${visible[i] ? "animate-riseIn" : "opacity-0"}`}
+                className={visible[i] ? "animate-slideInUp" : "opacity-0"}
                 style={{ animationDelay: `${i * 0.15}s` }}
               >
-                {/* Node */}
-                <div className="animate-pulseDot absolute -left-10 top-2 w-4 h-4 rounded-full flex items-center justify-center bg-accent-deep border-2 border-accent">
-                  <GitCommit size={9} className="text-accent" />
+                {/* Dot */}
+                <div className="absolute -left-7 top-5 w-5 h-5 rounded-full flex items-center justify-center bg-emerald-600 border-4 border-white shadow-lg hover:scale-125 transition-transform duration-300">
+                  <GitCommit size={10} className="text-white" />
                 </div>
 
                 {/* Card */}
-                <div className="group rounded-xl p-6 md:p-8 border border-line bg-surface transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:shadow-[0_12px_40px_-12px_rgba(52,211,153,0.25)]">
-                  <p className="text-xs mb-2 tracking-wider uppercase text-muted font-mono">
-                    internship // {String(i + 1).padStart(2, "0")} — {exp.issueDate} →{" "}
-                    {exp.finishDate}
-                  </p>
+                <div className="group rounded-2xl p-6 md:p-8 border-2 border-emerald-200 bg-white/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-emerald-400 hover:shadow-lg hover:shadow-emerald-200/50">
+                  {/* Top bar */}
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600">
+                      Internship {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="text-xs text-gray-600 font-medium">
+                      {exp.issueDate} → {exp.finishDate}
+                    </span>
+                  </div>
 
-                  <h3 className="text-2xl font-bold mb-1 text-cream font-display">
+                  <h3 className="text-2xl font-bold mb-2 text-emerald-900 group-hover:text-emerald-700 transition-colors">
                     {exp.companyname}
                   </h3>
 
-                  <p className="text-base mb-4 text-accent">{exp.role}</p>
+                  <p className="text-base mb-4 text-emerald-600 font-semibold">{exp.role}</p>
 
-                  <p className="text-sm leading-relaxed mb-6 text-body font-sans">
+                  <p className="text-sm leading-relaxed mb-6 text-gray-700">
                     {exp.WhatIDid}
                   </p>
 
-                  
-                   <a href={exp.certificateLink}
+                  <a
+                    href={exp.certificateLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-lg border border-accent text-accent font-mono transition-all duration-300 hover:bg-accent hover:text-ink hover:gap-2.5"
+                    className="inline-flex items-center gap-2 text-sm font-semibold px-5 py-2.5 rounded-lg border-2 border-emerald-600 text-emerald-600 hover:bg-emerald-600 hover:text-white transition-all duration-300 hover:shadow-md hover:shadow-emerald-200"
                   >
-                    View certificate
-                    <ExternalLink size={14} />
+                    View Certificate
+                    <ExternalLink size={16} />
                   </a>
                 </div>
               </div>
