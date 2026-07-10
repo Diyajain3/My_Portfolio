@@ -85,31 +85,28 @@ export default function Skills() {
   }, []);
 
   return (
-    <section id="skills" className="relative bg-gradient-to-b from-white via-emerald-50 to-emerald-100 py-28 px-6 overflow-hidden">
+    <section id="skills" className="relative bg-gradient-to-b from-white via-emerald-50 to-white py-32 px-6 overflow-hidden">
       {/* Animated background elements */}
-      <div className="absolute top-32 -left-40 w-80 h-80 bg-emerald-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
-      <div className="absolute top-1/3 -right-32 w-80 h-80 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '2s' }}></div>
-      <div className="absolute bottom-20 left-1/3 w-96 h-96 bg-emerald-300 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-pulse" style={{ animationDelay: '4s' }}></div>
+      <div className="absolute top-40 -left-40 w-96 h-96 bg-emerald-300 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-pulse"></div>
+      <div className="absolute top-1/2 -right-40 w-96 h-96 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-pulse" style={{ animationDelay: '2s' }}></div>
 
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Header Section */}
-        <div className="mb-20 text-center">
-          <div className="inline-block mb-6">
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 border border-emerald-200">
-              <Code2 size={18} className="text-emerald-600" />
-              <span className="text-sm font-semibold text-emerald-700">Technical Skills</span>
-            </span>
+        <div className="mb-24 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 border border-emerald-200 mb-6 animate-slideInDown">
+            <Code2 size={18} className="text-emerald-600" />
+            <span className="text-sm font-bold text-emerald-700">TECHNICAL STACK</span>
           </div>
-          <h2 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent mb-6 leading-tight">
-            My Expertise
+          <h2 className="text-6xl md:text-7xl font-black bg-gradient-to-r from-emerald-900 via-emerald-800 to-emerald-700 bg-clip-text text-transparent mb-6 leading-tight">
+            Skills & Technologies
           </h2>
-          <p className="text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed">
-            I&apos;ve built expertise across the full stack, specializing in modern JavaScript frameworks and cloud technologies. Each skill represents real-world experience and continuous learning.
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+            Complete arsenal of modern technologies and tools I use to build scalable, performant web applications
           </p>
         </div>
 
-        {/* Skills Categories - Grid Layout */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
+        {/* Skills Grid - Single Row Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {skillGroups.map((group, i) => (
             <div
               key={group.category}
@@ -117,86 +114,100 @@ export default function Skills() {
                 refs.current[i] = el;
               }}
               className={visible[i] ? "animate-slideInUp" : "opacity-0"}
-              style={{ animationDelay: `${i * 0.15}s` }}
+              style={{ animationDelay: `${i * 0.12}s` }}
             >
-              {/* Category Card */}
-              <div className="group relative rounded-2xl border-2 border-emerald-200 bg-white/60 backdrop-blur-lg p-8 hover:border-emerald-400 hover:shadow-xl hover:shadow-emerald-200/50 transition-all duration-500 hover:-translate-y-2">
-                {/* Gradient overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none"></div>
+              {/* Category Card - Modern Design */}
+              <div className="group relative h-full rounded-2xl border border-emerald-200 bg-gradient-to-br from-white via-emerald-50/30 to-white p-7 hover:border-emerald-400 transition-all duration-500 hover:shadow-2xl hover:shadow-emerald-200/40 hover:-translate-y-3">
+                {/* Glow effect on hover */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-emerald-600/0 to-emerald-500/0 group-hover:from-emerald-600/5 group-hover:to-emerald-500/5 transition-all duration-500 pointer-events-none"></div>
 
-                {/* Top border accent */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-600 via-emerald-500 to-transparent rounded-t-2xl transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-
-                {/* Category Header */}
-                <div className="flex items-center gap-3 mb-8 relative z-10">
-                  <div className="p-3 rounded-xl bg-gradient-to-br from-emerald-600 to-emerald-500 text-white group-hover:scale-110 transition-transform duration-300">
-                    <Folder size={24} />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-emerald-900">
-                      {group.category.replace('/', '')}
-                    </h3>
-                    <p className="text-sm text-gray-600">
-                      {group.skills.length} technologies
-                    </p>
+                {/* Category Icon with Gradient */}
+                <div className="mb-6 relative z-10">
+                  <div className="inline-flex p-4 rounded-xl bg-gradient-to-br from-emerald-600 to-emerald-500 text-white shadow-lg group-hover:scale-110 group-hover:shadow-emerald-400/50 transition-all duration-300">
+                    <Folder size={28} />
                   </div>
                 </div>
 
-                {/* Skills Grid for this category */}
-                <div className="grid grid-cols-2 gap-3 relative z-10">
+                {/* Category Title */}
+                <h3 className="text-2xl font-bold text-emerald-900 mb-2 relative z-10">
+                  {group.category.replace('/', '')}
+                </h3>
+                <p className="text-sm text-emerald-600 font-semibold mb-6 relative z-10">
+                  {group.skills.length} skills
+                </p>
+
+                {/* Skills List */}
+                <div className="space-y-2 relative z-10">
                   {group.skills.map(({ name, icon: Icon, color }) => (
                     <div
                       key={name}
-                      className="group/skill relative flex items-center gap-2 px-3 py-2.5 rounded-lg bg-white border border-emerald-100 hover:border-emerald-300 hover:bg-emerald-50 transition-all duration-300 hover:shadow-md"
+                      className="group/skill flex items-center gap-3 p-3 rounded-lg bg-white/50 hover:bg-white border border-emerald-100 hover:border-emerald-300 transition-all duration-300 cursor-default"
                     >
-                      {/* Animated background */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/0 via-emerald-500/10 to-emerald-500/0 opacity-0 group-hover/skill:opacity-100 transition-opacity duration-300 rounded-lg"></div>
-
-                      <Icon
-                        size={20}
-                        style={{ color }}
-                        className="flex-shrink-0 transition-all duration-300 group-hover/skill:scale-110 relative z-10"
-                      />
-                      <span className="text-sm font-medium text-gray-800 group-hover/skill:text-emerald-700 transition-colors duration-300 relative z-10 truncate">
+                      <div
+                        className="flex-shrink-0 p-2 rounded-lg bg-white group-hover/skill:scale-110 transition-transform duration-300"
+                        style={{ backgroundColor: `${color}15` }}
+                      >
+                        <Icon
+                          size={18}
+                          style={{ color }}
+                          className="transition-all duration-300"
+                        />
+                      </div>
+                      <span className="text-sm font-medium text-gray-800 group-hover/skill:text-emerald-700 transition-colors duration-300 truncate">
                         {name}
                       </span>
                     </div>
                   ))}
                 </div>
 
-                {/* Skill count badge */}
-                <div className="absolute -top-3 -right-3 w-12 h-12 rounded-full bg-gradient-to-br from-emerald-600 to-emerald-500 text-white font-bold flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 relative z-20">
-                  {group.skills.length}
-                </div>
+                {/* Decorative corner badge */}
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-emerald-600/10 to-transparent rounded-bl-2xl pointer-events-none"></div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Summary Stats */}
-        <div className="grid grid-cols-3 gap-4 md:gap-6 pt-8 border-t border-emerald-200">
-          <div className="text-center animate-slideInUp" style={{ animationDelay: '0.6s' }}>
-            <div className="text-4xl font-bold text-emerald-600 mb-2">
+        {/* Divider */}
+        <div className="h-px bg-gradient-to-r from-transparent via-emerald-300 to-transparent mb-16"></div>
+
+        {/* Summary Stats - Enhanced */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="group relative rounded-2xl border border-emerald-200 bg-gradient-to-br from-emerald-50 to-white p-8 hover:border-emerald-400 hover:shadow-xl transition-all duration-500 text-center hover:-translate-y-2">
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-emerald-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+            <div className="text-5xl font-black text-emerald-600 mb-2 relative z-10">
               {skillGroups.reduce((sum, g) => sum + g.skills.length, 0)}+
             </div>
-            <p className="text-sm text-gray-700 font-medium">
-              Skills Mastered
+            <p className="text-lg font-bold text-emerald-900 relative z-10">
+              Technologies
+            </p>
+            <p className="text-sm text-gray-600 mt-2 relative z-10">
+              Expert level proficiency
             </p>
           </div>
-          <div className="text-center animate-slideInUp" style={{ animationDelay: '0.7s' }}>
-            <div className="text-4xl font-bold text-emerald-600 mb-2">
+
+          <div className="group relative rounded-2xl border border-emerald-200 bg-gradient-to-br from-emerald-50 to-white p-8 hover:border-emerald-400 hover:shadow-xl transition-all duration-500 text-center hover:-translate-y-2">
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-emerald-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+            <div className="text-5xl font-black text-emerald-600 mb-2 relative z-10">
               {skillGroups.length}
             </div>
-            <p className="text-sm text-gray-700 font-medium">
+            <p className="text-lg font-bold text-emerald-900 relative z-10">
               Categories
             </p>
+            <p className="text-sm text-gray-600 mt-2 relative z-10">
+              Full stack development
+            </p>
           </div>
-          <div className="text-center animate-slideInUp" style={{ animationDelay: '0.8s' }}>
-            <div className="text-4xl font-bold text-emerald-600 mb-2">
+
+          <div className="group relative rounded-2xl border border-emerald-200 bg-gradient-to-br from-emerald-50 to-white p-8 hover:border-emerald-400 hover:shadow-xl transition-all duration-500 text-center hover:-translate-y-2">
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-emerald-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+            <div className="text-5xl font-black text-emerald-600 mb-2 relative z-10">
               2+
             </div>
-            <p className="text-sm text-gray-700 font-medium">
-              Years Experience
+            <p className="text-lg font-bold text-emerald-900 relative z-10">
+              Years
+            </p>
+            <p className="text-sm text-gray-600 mt-2 relative z-10">
+              Professional experience
             </p>
           </div>
         </div>
