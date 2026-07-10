@@ -40,7 +40,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative bg-gradient-to-b from-white to-emerald-50 py-24 px-6 overflow-hidden"
+      className="relative bg-gradient-to-b from-white to-emerald-50 py-16 px-6 overflow-hidden"
     >
       {/* Soft background glow */}
       <div className="absolute top-10 -left-24 w-80 h-80 bg-emerald-300/20 rounded-full blur-3xl" />
@@ -48,34 +48,34 @@ export default function Skills() {
 
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 border border-emerald-200 mb-5">
+        <div className="text-center mb-10">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 border border-emerald-200 mb-4">
             <Code2 size={18} className="text-emerald-600" />
             <span className="text-sm font-bold text-emerald-700 tracking-wide">
               MY TECH STACK
             </span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-extrabold text-emerald-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-emerald-900 mb-3">
             Skills &amp; Technologies
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Tools and technologies I use to build modern, responsive and scalable
             web applications.
           </p>
         </div>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
           {skills.map(({ name, icon: Icon, color }) => (
             <div
               key={name}
-              className="group flex flex-col items-center justify-center gap-4 rounded-2xl bg-white border border-emerald-100 p-6 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-emerald-300"
+              className="group flex flex-col items-center justify-center gap-3 rounded-2xl bg-white border border-emerald-100 p-5 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-emerald-300"
             >
               <div
-                className="flex items-center justify-center w-16 h-16 rounded-2xl transition-transform duration-300 group-hover:scale-110"
+                className="flex items-center justify-center w-14 h-14 rounded-2xl transition-transform duration-300 group-hover:scale-110"
                 style={{ backgroundColor: `${color}1A` }}
               >
-                <Icon size={34} style={{ color }} />
+                <Icon size={30} style={{ color }} />
               </div>
               <span className="text-sm font-semibold text-gray-800 group-hover:text-emerald-700 transition-colors">
                 {name}
