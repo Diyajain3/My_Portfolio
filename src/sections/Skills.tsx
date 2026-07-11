@@ -43,12 +43,12 @@ export default function Skills() {
       className="relative bg-gradient-to-b from-white to-emerald-50 py-16 px-6 overflow-hidden"
     >
       {/* Soft background glow */}
-      <div className="absolute top-10 -left-24 w-80 h-80 bg-emerald-300/20 rounded-full blur-3xl" />
-      <div className="absolute bottom-10 -right-24 w-80 h-80 bg-emerald-200/20 rounded-full blur-3xl" />
+      <div className="absolute top-10 -left-24 w-80 h-80 bg-emerald-300/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-10 -right-24 w-80 h-80 bg-emerald-200/10 rounded-full blur-3xl" />
 
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Header */}
-        <div className="text-center mb-10">
+        <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 border border-emerald-200 mb-4">
             <Code2 size={18} className="text-emerald-600" />
             <span className="text-sm font-bold text-emerald-700 tracking-wide">

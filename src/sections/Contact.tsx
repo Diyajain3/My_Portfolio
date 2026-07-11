@@ -17,11 +17,11 @@ export default function Contact() {
       className="relative bg-gradient-to-b from-white via-emerald-50 to-emerald-100 py-24 px-6 md:px-16 overflow-hidden"
     >
       {/* Decorative elements */}
-      <div className="absolute top-20 left-10 w-96 h-96 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-emerald-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute top-20 left-10 w-96 h-96 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-emerald-300 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse" style={{ animationDelay: '2s' }}></div>
 
       {/* Heading */}
-      <div className="text-center mb-16 relative z-10">
+      <div className="text-center mb-12 relative z-10">
         <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent mb-4 animate-slideInDown">
           Get In Touch
         </h2>
@@ -31,7 +31,7 @@ export default function Contact() {
         </p>
       </div>
 
-      <div className="grid lg:grid-cols-2 gap-8 max-w-7xl mx-auto relative z-10">
+      <div className="grid lg:grid-cols-2 gap-6 max-w-7xl mx-auto relative z-10">
         {/* LEFT - Contact Info */}
 
         <div className="group rounded-3xl bg-white/80 backdrop-blur-xl border border-emerald-200 shadow-xl hover:shadow-2xl hover:shadow-emerald-200/50 p-10 transition-all duration-500 hover:-translate-y-2">
@@ -169,7 +169,7 @@ export default function Contact() {
         </form>
       </div>
 
-      <p className="text-center text-gray-700 mt-16 text-lg font-medium relative z-10">
+      <p className="text-center text-gray-700 mt-12 text-lg font-medium relative z-10">
         Thank you for taking the time to explore my portfolio. Looking forward to connecting with you!
       </p>
     </section>

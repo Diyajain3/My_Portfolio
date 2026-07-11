@@ -56,19 +56,19 @@ export default function Project() {
       className="relative min-h-screen bg-gradient-to-b from-white via-emerald-50 to-emerald-100 py-20 px-6 overflow-hidden"
     >
       {/* Decorative elements */}
-      <div className="absolute top-40 left-20 w-96 h-96 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-pulse"></div>
-      <div className="absolute -bottom-20 right-20 w-96 h-96 bg-emerald-300 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-pulse" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute top-40 left-20 w-96 h-96 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-8 animate-pulse"></div>
+      <div className="absolute -bottom-20 right-20 w-96 h-96 bg-emerald-300 rounded-full mix-blend-multiply filter blur-3xl opacity-8 animate-pulse" style={{ animationDelay: '2s' }}></div>
 
       <div className="max-w-6xl mx-auto relative z-10">
 
-        <h1 className="text-5xl md:text-6xl font-bold text-center bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent mb-16 animate-slideInDown">
+        <h1 className="text-5xl md:text-6xl font-bold text-center bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent mb-12 animate-slideInDown">
           My Projects
         </h1>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center bg-white/80 backdrop-blur-md rounded-3xl shadow-2xl border border-emerald-100 p-8 md:p-12 animate-slideInUp">
+        <div className="grid md:grid-cols-2 gap-8 items-center bg-white/80 backdrop-blur-md rounded-3xl shadow-2xl border border-emerald-100 p-8 md:p-12 animate-slideInUp">
 
           {/* Left */}
-          <div className="space-y-6">
+          <div className="space-y-4">
 
             <h2 className="text-4xl md:text-5xl font-bold text-emerald-900 leading-tight">
               {project.name}
@@ -140,7 +140,7 @@ export default function Project() {
 
         {/* Navigation */}
 
-        <div className="flex justify-between items-center mt-12 gap-4 flex-wrap">
+        <div className="flex justify-between items-center mt-8 gap-4 flex-wrap">
 
           <button
             onClick={prevProject}

@@ -10,10 +10,10 @@ export default function Hero() {
       className="relative min-h-screen flex items-center bg-gradient-to-br from-emerald-50 via-white to-emerald-100 overflow-hidden"
     >
       {/* Animated background elements */}
-      <div className="absolute top-10 right-20 w-72 h-72 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
-      <div className="absolute -bottom-8 left-10 w-72 h-72 bg-emerald-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute top-10 right-20 w-72 h-72 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
+      <div className="absolute -bottom-8 left-10 w-72 h-72 bg-emerald-300 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse" style={{ animationDelay: '2s' }}></div>
 
-      <div className="max-w-6xl mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-16 items-center relative z-10">
+      <div className="max-w-6xl mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-12 items-center relative z-10">
 
         {/* Left Section - Image */}
         <div className="flex justify-center">
@@ -29,7 +29,7 @@ export default function Hero() {
         </div>
 
         {/* Right Section - Content */}
-        <div className="space-y-6">
+        <div className="space-y-4">
 
           <p className="text-emerald-600 text-lg font-semibold animate-slideInDown opacity-0" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
             Hello, I&apos;m
