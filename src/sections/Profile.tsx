@@ -297,14 +297,14 @@ const Profile: React.FC = () => {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
             id="leetcode"
-            className="w-full px-6 md:px-12 py-12 scroll-mt-20 bg-gradient-to-b from-white via-emerald-50 to-emerald-100 overflow-hidden"
+            className="w-full px-4 sm:px-6 md:px-12 py-12 md:py-16 scroll-mt-20 bg-gradient-to-b from-white via-emerald-50 to-emerald-100 overflow-hidden"
         >
             <motion.h4
                 initial={{ y: -15, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.1, duration: 0.4 }}
                 viewport={{ once: true }}
-                className="text-center mb-2 text-lg font-Ovo text-emerald-600"
+                className="text-center mb-2 text-base sm:text-lg font-Ovo text-emerald-600"
             >
                 Competitive Programming
             </motion.h4>
@@ -314,7 +314,7 @@ const Profile: React.FC = () => {
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.2, duration: 0.4 }}
                 viewport={{ once: true }}
-                className="text-center text-5xl md:text-6xl font-bold bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent"
+                className="text-center text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent"
             >
                 LeetCode Journey
             </motion.h2>
@@ -424,56 +424,58 @@ const Profile: React.FC = () => {
                             </div>
                         ) : (
                             <>
-                                <div className="inline-flex gap-[3px]">
-                                    {heatmap.map((week, wi) => (
-                                        <div 
-                                            key={wi} 
-                                            className="flex flex-col gap-[3px]"
-                                            style={{
-                                                marginRight: wi % 4 === 3 ? '12px' : '0px'
-                                            }}
-                                        >
-                                            {week.map((val, di) => (
-                                                <motion.div
-                                                    key={`${wi}-${di}`}
-                                                    initial={prefersReducedMotion ? {} : { opacity: 0, scale: 0 }}
-                                                    whileInView={{
-                                                        opacity: val === -1 ? 0 : 1,
-                                                        scale: val === -1 ? 0 : 1,
-                                                    }}
-                                                    transition={{ delay: 0.002 * wi, duration: 0.1 }}
-                                                    viewport={{ once: true }}
-                                                    className="w-[10px] h-[10px] sm:w-[12px] sm:h-[12px] rounded-[2px]"
-                                                    style={{
-                                                        backgroundColor: val === -1 ? 'transparent' : getHeatColor(val),
-                                                    }}
-                                                    title={
-                                                        val > 0
-                                                            ? `${val} submission(s)`
-                                                            : val === 0
-                                                            ? 'No submissions'
-                                                            : ''
-                                                    }
-                                                />
-                                            ))}
-                                        </div>
-                                    ))}
+                                <div className="overflow-x-auto pb-8">
+                                    <div className="inline-flex gap-[3px] min-w-min">
+                                        {heatmap.map((week, wi) => (
+                                            <div 
+                                                key={wi} 
+                                                className="flex flex-col gap-[3px]"
+                                                style={{
+                                                    marginRight: wi % 4 === 3 ? '8px sm:12px' : '0px'
+                                                }}
+                                            >
+                                                {week.map((val, di) => (
+                                                    <motion.div
+                                                        key={`${wi}-${di}`}
+                                                        initial={prefersReducedMotion ? {} : { opacity: 0, scale: 0 }}
+                                                        whileInView={{
+                                                            opacity: val === -1 ? 0 : 1,
+                                                            scale: val === -1 ? 0 : 1,
+                                                        }}
+                                                        transition={{ delay: 0.002 * wi, duration: 0.1 }}
+                                                        viewport={{ once: true }}
+                                                        className="w-[8px] h-[8px] sm:w-[10px] sm:h-[10px] md:w-[12px] md:h-[12px] rounded-[1px] sm:rounded-[2px]"
+                                                        style={{
+                                                            backgroundColor: val === -1 ? 'transparent' : getHeatColor(val),
+                                                        }}
+                                                        title={
+                                                            val > 0
+                                                                ? `${val} submission(s)`
+                                                                : val === 0
+                                                                ? 'No submissions'
+                                                                : ''
+                                                        }
+                                                    />
+                                                ))}
+                                            </div>
+                                        ))}
+                                    </div>
+
+                                    <div className="flex mt-3 md:mt-4 text-[8px] sm:text-[9px] text-gray-400 font-Outfit">
+                                        {monthLabels.map((m, i) => (
+                                            <span key={`${m}-${i}`} style={{ width: `${100 / 12}%` }} className="text-center">
+                                                {m}
+                                            </span>
+                                        ))}
+                                    </div>
                                 </div>
 
-                                <div className="flex mt-1.5 text-[9px] text-gray-400 font-Outfit">
-                                    {monthLabels.map((m, i) => (
-                                        <span key={`${m}-${i}`} style={{ width: `${100 / 12}%` }}>
-                                            {m}
-                                        </span>
-                                    ))}
-                                </div>
-
-                                <div className="flex items-center gap-1 mt-2 text-[9px] text-gray-400">
+                                <div className="flex items-center gap-1 mt-2 text-[7px] sm:text-[8px] md:text-[9px] text-gray-400">
                                     <span>Less</span>
                                     {[0, 1, 2, 4, 7].map((v) => (
                                         <div
                                             key={v}
-                                            className="w-[10px] h-[10px] rounded-[2px]"
+                                            className="w-[8px] h-[8px] sm:w-[10px] sm:h-[10px] rounded-[1px] sm:rounded-[2px]"
                                             style={{ backgroundColor: getHeatColor(v) }}
                                         />
                                     ))}

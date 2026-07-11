@@ -14,19 +14,19 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative bg-gradient-to-b from-white via-emerald-50 to-emerald-100 py-24 px-6 md:px-16 overflow-hidden"
+      className="relative bg-gradient-to-b from-white via-emerald-50 to-emerald-100 py-16 md:py-24 px-4 sm:px-6 md:px-16 overflow-hidden"
     >
       {/* Decorative elements */}
       <div className="absolute top-20 left-10 w-96 h-96 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-emerald-300 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse" style={{ animationDelay: '2s' }}></div>
 
       {/* Heading */}
-      <div className="text-center mb-12 relative z-10">
-        <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent mb-4 animate-slideInDown">
+      <div className="text-center mb-10 md:mb-12 relative z-10">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent mb-4 animate-slideInDown">
           Get In Touch
         </h2>
 
-        <p className="mt-6 text-gray-700 text-lg max-w-2xl mx-auto leading-relaxed">
+        <p className="mt-4 md:mt-6 text-gray-700 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
           Have a project in mind or just want to say hello? I&apos;d love to hear from you. Let&apos;s collaborate and create something amazing together!
         </p>
       </div>
@@ -34,17 +34,18 @@ export default function Contact() {
       <div className="grid lg:grid-cols-2 gap-6 max-w-7xl mx-auto relative z-10">
         {/* LEFT - Contact Info */}
 
-        <div className="group rounded-3xl bg-white/80 backdrop-blur-xl border border-emerald-200 shadow-xl hover:shadow-2xl hover:shadow-emerald-200/50 p-10 transition-all duration-500 hover:-translate-y-2">
+        <div className="group rounded-3xl bg-white/80 backdrop-blur-xl border border-emerald-200 shadow-xl hover:shadow-2xl hover:shadow-emerald-200/50 p-6 sm:p-8 md:p-10 transition-all duration-500 hover:-translate-y-2">
 
-          <h3 className="text-4xl font-bold text-emerald-900 mb-10">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-emerald-900 mb-6 sm:mb-8 md:mb-10">
             Diya Jain
           </h3>
 
-          <div className="space-y-8">
+          <div className="space-y-6 md:space-y-8">
 
-            <a href="mailto:diyajain3003@gmail.com" className="group/item flex gap-5 p-4 rounded-2xl hover:bg-emerald-50 transition-all duration-300">
-              <div className="flex-shrink-0 bg-gradient-to-br from-emerald-600 to-emerald-500 p-4 rounded-xl text-white group-hover/item:shadow-lg group-hover/item:shadow-emerald-400/50 group-hover/item:scale-110 transition-all duration-300">
-                <Mail size={24} />
+            <a href="mailto:diyajain3003@gmail.com" className="group/item flex gap-3 sm:gap-4 md:gap-5 p-3 md:p-4 rounded-2xl hover:bg-emerald-50 transition-all duration-300">
+              <div className="flex-shrink-0 bg-gradient-to-br from-emerald-600 to-emerald-500 p-3 sm:p-4 rounded-xl text-white group-hover/item:shadow-lg group-hover/item:shadow-emerald-400/50 group-hover/item:scale-110 transition-all duration-300">
+                <Mail size={20} className="sm:hidden" />
+                <Mail size={24} className="hidden sm:block" />
               </div>
 
               <div>
