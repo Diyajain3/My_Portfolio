@@ -424,14 +424,14 @@ const Profile: React.FC = () => {
                             </div>
                         ) : (
                             <>
-                                <div className="overflow-x-auto pb-8">
+                                <div className="overflow-x-auto pb-12">
                                     <div className="inline-flex gap-[3px] min-w-min">
                                         {heatmap.map((week, wi) => (
                                             <div 
                                                 key={wi} 
                                                 className="flex flex-col gap-[3px]"
                                                 style={{
-                                                    marginRight: wi % 4 === 3 ? '8px sm:12px' : '0px'
+                                                    marginRight: wi % 4 === 3 ? '12px' : '0px'
                                                 }}
                                             >
                                                 {week.map((val, di) => (
@@ -461,11 +461,17 @@ const Profile: React.FC = () => {
                                         ))}
                                     </div>
 
-                                    <div className="flex mt-3 md:mt-4 text-[8px] sm:text-[9px] text-gray-400 font-Outfit">
+                                    <div className="inline-flex gap-[3px] mt-2 text-[7px] sm:text-[8px] md:text-[9px] text-gray-500 font-Outfit w-full">
                                         {monthLabels.map((m, i) => (
-                                            <span key={`${m}-${i}`} style={{ width: `${100 / 12}%` }} className="text-center">
+                                            <div 
+                                                key={`${m}-${i}`} 
+                                                className="text-center flex-1"
+                                                style={{
+                                                    marginRight: i % 12 === 3 || i % 12 === 7 || i % 12 === 11 ? '6px' : '0px'
+                                                }}
+                                            >
                                                 {m}
-                                            </span>
+                                            </div>
                                         ))}
                                     </div>
                                 </div>

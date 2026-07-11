@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+
 const navLinks = [
   { name: "Home", href: "#hero" },
   { name: "Education", href: "#education" },
@@ -12,6 +14,12 @@ const navLinks = [
 ];
 
 export default function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleLinkClick = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <nav className="sticky top-0 z-50 bg-white/70 backdrop-blur-xl border-b-2 border-emerald-100 shadow-lg">
       
@@ -45,11 +53,35 @@ export default function Navbar() {
 
 
           {/* Mobile menu button */}
-          <button className="md:hidden group text-emerald-800 text-3xl font-bold hover:text-emerald-600 transition-colors duration-300">
-            ☰
+          <button 
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden group text-emerald-800 text-3xl font-bold hover:text-emerald-600 transition-colors duration-300 p-2"
+            aria-label="Toggle mobile menu"
+            aria-expanded={isMenuOpen}
+          >
+            {isMenuOpen ? '✕' : '☰'}
           </button>
 
         </div>
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden bg-white/90 backdrop-blur-lg border-t border-emerald-100 animate-in fade-in slide-in-from-top-2">
+            <ul className="flex flex-col gap-0 py-4">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    onClick={handleLinkClick}
+                    className="block px-6 py-3 text-emerald-900 font-semibold hover:bg-emerald-50 hover:text-emerald-600 transition-all duration-300 text-sm uppercase tracking-wide border-l-4 border-l-transparent hover:border-l-emerald-600"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     </nav>
   );
