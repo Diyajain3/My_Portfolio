@@ -1,9 +1,23 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
 export default function Education() {
   
-const ref = useRef(null);
+const ref = useRef<HTMLDivElement>(null);
+const [timelineHeight, setTimelineHeight] = useState(500);
+
+useEffect(() => {
+  if (ref.current) {
+    setTimelineHeight(ref.current.clientHeight);
+    const resizeObserver = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        setTimelineHeight(entry.target.clientHeight);
+      }
+    });
+    resizeObserver.observe(ref.current);
+    return () => resizeObserver.disconnect();
+  }
+}, []);
 
 const { scrollYProgress } = useScroll({
   target: ref,
@@ -15,7 +29,7 @@ const smoothProgress = useSpring(scrollYProgress, {
   damping: 20,
 });
 
-const y = useTransform(smoothProgress, [0, 1], [0, 500]);
+const y = useTransform(smoothProgress, [0, 1], [0, Math.max(0, timelineHeight - 22)]);
 
   const data = [
     {
@@ -39,8 +53,8 @@ const y = useTransform(smoothProgress, [0, 1], [0, 500]);
   ];
 
   return (
-    <section className="py-20 bg-green-50">
-      <h1 className="text-4xl font-bold text-center text-green-800 mb-16">
+    <section className="py-16 bg-gradient-to-b from-white via-emerald-50 to-emerald-100 overflow-hidden">
+      <h1 className="text-5xl md:text-6xl font-bold text-center bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent mb-12">
         Education
       </h1>
 

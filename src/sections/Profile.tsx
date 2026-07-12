@@ -40,14 +40,43 @@ const FALLBACK_STATS: LeetCodeStats = {
     streak: 51,
 }
 
+interface CalendarBounds {
+    startMs: number
+    todayTs: number
+    numWeeks: number
+    todayUTC: number
+}
+
+function getCalendarBounds(): CalendarBounds {
+    const now = new Date()
+    const todayUTC = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate())
+    
+    // Go back exactly 1 year in calendar time
+    const oneYearAgo = new Date(todayUTC)
+    oneYearAgo.setUTCFullYear(oneYearAgo.getUTCFullYear() - 1)
+    const oneYearAgoMs = oneYearAgo.getTime()
+    const oneYearAgoDayOfWeek = oneYearAgo.getUTCDay()
+    
+    // Align to the Sunday of that week
+    const startMs = oneYearAgoMs - oneYearAgoDayOfWeek * 86400000
+    const todayTs = todayUTC / 1000
+
+    // Calculate how many weeks are needed to reach today
+    const totalDays = Math.round((todayUTC - startMs) / 86400000) + 1
+    const numWeeks = Math.ceil(totalDays / 7)
+
+    return { startMs, todayTs, numWeeks, todayUTC }
+}
+
 function generateFallbackHeatmap(): HeatmapGrid {
+    const { numWeeks } = getCalendarBounds()
     const weeks: HeatmapGrid = []
     let seed = 42
     const rand = () => {
         seed = (seed * 16807 + 0) % 2147483647
         return (seed - 1) / 2147483646
     }
-    for (let w = 0; w < 53; w++) {
+    for (let w = 0; w < numWeeks; w++) {
         const week: number[] = []
         for (let d = 0; d < 7; d++) {
             const r = rand()
@@ -78,17 +107,13 @@ function buildHeatmapFromCalendar(
     const entries = Object.keys(calendarMap)
     if (entries.length === 0) return null
 
-    const now = new Date()
-    const todayUTC = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate())
-    const todayDayOfWeek = new Date(todayUTC).getUTCDay()
-    const startMs = todayUTC - (52 * 7 + todayDayOfWeek) * 86400000
-    const todayTs = todayUTC / 1000
+    const { startMs, todayTs, numWeeks } = getCalendarBounds()
 
     const weeks: HeatmapGrid = []
     let currentMs = startMs
     let matchCount = 0
 
-    for (let w = 0; w < 53; w++) {
+    for (let w = 0; w < numWeeks; w++) {
         const week: number[] = []
         for (let d = 0; d < 7; d++) {
             const ts = currentMs / 1000
@@ -284,6 +309,12 @@ const Profile: React.FC = () => {
     const maxStreak = useCountUp(stats.streak)
     const monthLabels = getMonthLabels()
 
+    const getWeekMonthName = (wi: number) => {
+        const { startMs } = getCalendarBounds()
+        const date = new Date(startMs + wi * 7 * 86400000)
+        return MONTHS_SHORT[date.getUTCMonth()]
+    }
+
     useEffect(() => {
         if (!loading && heatmapScrollRef.current) {
             heatmapScrollRef.current.scrollLeft = heatmapScrollRef.current.scrollWidth
@@ -297,14 +328,14 @@ const Profile: React.FC = () => {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
             id="leetcode"
-            className="w-full px-[12%] py-8 scroll-mt-20 bg-white"
+            className="w-full px-4 sm:px-6 md:px-12 py-12 md:py-16 scroll-mt-20 bg-gradient-to-b from-white via-emerald-50 to-emerald-100 overflow-hidden"
         >
             <motion.h4
                 initial={{ y: -15, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.1, duration: 0.4 }}
                 viewport={{ once: true }}
-                className="text-center mb-2 text-lg font-Ovo text-green-700"
+                className="text-center mb-2 text-base sm:text-lg font-Ovo text-emerald-600"
             >
                 Competitive Programming
             </motion.h4>
@@ -314,7 +345,7 @@ const Profile: React.FC = () => {
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.2, duration: 0.4 }}
                 viewport={{ once: true }}
-                className="text-center text-5xl font-Ovo text-gray-800"
+                className="text-center text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent"
             >
                 LeetCode Journey
             </motion.h2>
@@ -324,7 +355,7 @@ const Profile: React.FC = () => {
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.4 }}
                 viewport={{ once: true }}
-                className="text-center max-w-2xl mx-auto mt-4 mb-8 font-Ovo text-gray-600"
+                className="text-center max-w-2xl mx-auto mt-4 mb-8 font-Ovo text-gray-700"
             >
                 Sharpening problem-solving skills one challenge at a time.
             </motion.p>
@@ -335,7 +366,7 @@ const Profile: React.FC = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.35, duration: 0.4 }}
                     viewport={{ once: true }}
-                    className="rounded-2xl p-5 sm:p-6 mb-4 bg-[#f4fbf6] border border-[#d8f0dd]"
+                    className="rounded-2xl p-5 sm:p-6 mb-4 bg-white/80 backdrop-blur-sm border border-emerald-200 shadow-md"
                 >
                     <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
                         <div className="flex flex-wrap items-center justify-center sm:justify-start gap-5 sm:gap-6">
@@ -406,7 +437,7 @@ const Profile: React.FC = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.45, duration: 0.4 }}
                     viewport={{ once: true }}
-                    className="rounded-2xl p-5 sm:p-6 bg-[#f4fbf6] border border-[#d8f0dd]"
+                    className="rounded-2xl p-5 sm:p-6 bg-white/80 backdrop-blur-sm border border-emerald-200 shadow-md"
                 >
                     <div ref={heatmapScrollRef} className="w-full overflow-x-auto heatmap-scroll">
                         <div className="flex items-center mb-2">
@@ -424,50 +455,78 @@ const Profile: React.FC = () => {
                             </div>
                         ) : (
                             <>
-                                <div className="inline-flex gap-[3px]">
-                                    {heatmap.map((week, wi) => (
-                                        <div key={wi} className="flex flex-col gap-[3px]">
-                                            {week.map((val, di) => (
-                                                <motion.div
-                                                    key={`${wi}-${di}`}
-                                                    initial={prefersReducedMotion ? {} : { opacity: 0, scale: 0 }}
-                                                    whileInView={{
-                                                        opacity: val === -1 ? 0 : 1,
-                                                        scale: val === -1 ? 0 : 1,
-                                                    }}
-                                                    transition={{ delay: 0.002 * wi, duration: 0.1 }}
-                                                    viewport={{ once: true }}
-                                                    className="w-[10px] h-[10px] sm:w-[12px] sm:h-[12px] rounded-[2px]"
+                                <div className="overflow-x-auto pb-12">
+                                    <div className="inline-flex flex-col min-w-min">
+                                        {/* Months Row */}
+                                        <div className="flex gap-[3px] mb-2 text-gray-500 font-Outfit select-none relative h-5">
+                                            {heatmap.map((week, wi) => {
+                                                const currentMonth = getWeekMonthName(wi)
+                                                const prevMonth = wi > 0 ? getWeekMonthName(wi - 1) : null
+                                                const isMonthStart = currentMonth !== prevMonth
+
+                                                return (
+                                                    <div
+                                                        key={wi}
+                                                        className="relative w-[8px] sm:w-[10px] md:w-[12px] flex-shrink-0"
+                                                        style={{
+                                                            marginRight: wi % 4 === 3 ? '12px' : '0px'
+                                                        }}
+                                                    >
+                                                        {isMonthStart && (
+                                                            <span className="absolute left-0 bottom-0 whitespace-nowrap text-[8px] sm:text-[9px] font-bold text-gray-500">
+                                                                {currentMonth}
+                                                            </span>
+                                                        )}
+                                                    </div>
+                                                )
+                                            })}
+                                        </div>
+
+                                        {/* Heatmap Grid */}
+                                        <div className="flex gap-[3px]">
+                                            {heatmap.map((week, wi) => (
+                                                <div 
+                                                    key={wi} 
+                                                    className="flex flex-col gap-[3px]"
                                                     style={{
-                                                        backgroundColor: val === -1 ? 'transparent' : getHeatColor(val),
+                                                        marginRight: wi % 4 === 3 ? '12px' : '0px'
                                                     }}
-                                                    title={
-                                                        val > 0
-                                                            ? `${val} submission(s)`
-                                                            : val === 0
-                                                            ? 'No submissions'
-                                                            : ''
-                                                    }
-                                                />
+                                                >
+                                                    {week.map((val, di) => (
+                                                        <motion.div
+                                                            key={`${wi}-${di}`}
+                                                            initial={prefersReducedMotion ? {} : { opacity: 0, scale: 0 }}
+                                                            whileInView={{
+                                                                opacity: val === -1 ? 0 : 1,
+                                                                scale: val === -1 ? 0 : 1,
+                                                            }}
+                                                            transition={{ delay: 0.002 * wi, duration: 0.1 }}
+                                                            viewport={{ once: true }}
+                                                            className="w-[8px] h-[8px] sm:w-[10px] sm:h-[10px] md:w-[12px] md:h-[12px] rounded-[1px] sm:rounded-[2px]"
+                                                            style={{
+                                                                backgroundColor: val === -1 ? 'transparent' : getHeatColor(val),
+                                                            }}
+                                                            title={
+                                                                val > 0
+                                                                    ? `${val} submission(s)`
+                                                                    : val === 0
+                                                                    ? 'No submissions'
+                                                                    : ''
+                                                            }
+                                                        />
+                                                    ))}
+                                                </div>
                                             ))}
                                         </div>
-                                    ))}
+                                    </div>
                                 </div>
 
-                                <div className="flex mt-1.5 text-[9px] text-gray-400 font-Outfit">
-                                    {monthLabels.map((m, i) => (
-                                        <span key={`${m}-${i}`} style={{ width: `${100 / 12}%` }}>
-                                            {m}
-                                        </span>
-                                    ))}
-                                </div>
-
-                                <div className="flex items-center gap-1 mt-2 text-[9px] text-gray-400">
+                                <div className="flex items-center gap-1 mt-2 text-[7px] sm:text-[8px] md:text-[9px] text-gray-400">
                                     <span>Less</span>
                                     {[0, 1, 2, 4, 7].map((v) => (
                                         <div
                                             key={v}
-                                            className="w-[10px] h-[10px] rounded-[2px]"
+                                            className="w-[8px] h-[8px] sm:w-[10px] sm:h-[10px] rounded-[1px] sm:rounded-[2px]"
                                             style={{ backgroundColor: getHeatColor(v) }}
                                         />
                                     ))}
@@ -491,7 +550,7 @@ const Profile: React.FC = () => {
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.98 }}
-                        className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-green-600 text-sm text-green-700 hover:bg-green-50 transition-all duration-300 font-Outfit"
+                        className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-emerald-600 text-sm text-emerald-700 hover:bg-emerald-50 transition-all duration-300 font-Outfit"
                     >
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="opacity-70">
                             <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l.842.742a1.38 1.38 0 0 0 1.913-.064 1.366 1.366 0 0 0-.063-1.93l-.842-.74c-2.09-1.791-5.159-1.421-6.924.881L5.104 9.594l4.391-4.691A1.383 1.383 0 0 0 9.14 3.36L13.64.258a1.38 1.38 0 0 0-.157-.258ZM19.78 5.71a1.374 1.374 0 0 0-.961.438l-.12.128c-.246.26-.38.608-.38.97a1.376 1.376 0 0 0 .443.99l.842.742c.652.64.972 1.469.947 2.264a2.68 2.68 0 0 1-.066.523 2.545 2.545 0 0 1-.619 1.164l-2.982 3.19c-1.058 1.134-3.204 1.27-4.43.278l-.842-.742a1.38 1.38 0 0 0-1.913.064 1.366 1.366 0 0 0 .063 1.93l.842.74c2.09 1.791 5.159 1.421 6.924-.881l2.982-3.19a5.266 5.266 0 0 0 1.209-2.104 5.35 5.35 0 0 0 .125-.513 5.527 5.527 0 0 0-.062-2.362 5.83 5.83 0 0 0-.349-1.017 5.938 5.938 0 0 0-1.271-1.818l-.842-.742a1.38 1.38 0 0 0-.953-.389Z" />

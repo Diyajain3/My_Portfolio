@@ -26,7 +26,7 @@ export default function Home() {
      <Navbar/>
       <section id="hero" > <Hero/> </section>
       <section id="education" ><Education/></section>
-      <section id="skill"><Skills/></section>
+      <section id="skills"><Skills/></section>
       <section id="services"><Service/></section>
       <section id="projects" ><Project/> </section>
       <section id="profile" ><Profile/></section>

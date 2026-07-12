@@ -58,13 +58,13 @@ export default function Service() {
     <section className="relative bg-gradient-to-b from-emerald-50 via-white to-emerald-50 px-6 py-20 md:px-12 lg:px-20 overflow-hidden">
 
       {/* Decorative elements */}
-      <div className="absolute top-20 left-10 w-96 h-96 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-emerald-300 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute top-20 left-10 w-96 h-96 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-8 animate-pulse"></div>
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-emerald-300 rounded-full mix-blend-multiply filter blur-3xl opacity-8 animate-pulse" style={{ animationDelay: '2s' }}></div>
 
       <div className="relative z-10">
 
         {/* Heading */}
-        <div className="mx-auto mb-16 max-w-3xl text-center">
+        <div className="mx-auto mb-12 max-w-3xl text-center">
           <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent">
             My Services
           </h1>
@@ -84,7 +84,7 @@ export default function Service() {
             return (
               <div
                 key={index}
-                className="group relative overflow-hidden rounded-2xl border border-emerald-200 bg-white/80 backdrop-blur-sm p-8 shadow-lg transition-all duration-500 hover:-translate-y-4 hover:border-emerald-400 hover:shadow-2xl hover:shadow-emerald-200/50"
+                className="group relative overflow-hidden rounded-2xl border border-emerald-200 bg-white/80 backdrop-blur-sm p-6 sm:p-8 shadow-lg transition-all duration-500 hover:-translate-y-4 hover:border-emerald-400 hover:shadow-2xl hover:shadow-emerald-200/50"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
 

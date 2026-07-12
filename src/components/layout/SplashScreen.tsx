@@ -39,15 +39,15 @@ export default function SplashScreen({
           ease: "easeInOut",
         }}
       >
-        <p className="mb-10 text-lg tracking-wide">
+        <p className="mb-10 text-sm sm:text-lg tracking-wide text-center px-4">
           &gt; Initializing Portfolio...
         </p>
 
-        <h1 className="text-6xl font-bold text-white">
+        <h1 className="text-4xl sm:text-6xl font-bold text-white text-center px-4">
           Diya Jain
         </h1>
 
-        <p className="mt-4 text-xl text-green-300">
+        <p className="mt-4 text-lg sm:text-xl text-green-300 text-center px-4">
           Full Stack Developer
         </p>
 

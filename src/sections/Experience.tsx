@@ -55,12 +55,12 @@ export default function Experience() {
   return (
     <section className="relative bg-gradient-to-b from-white via-emerald-50 to-emerald-100 py-24 px-6 overflow-hidden">
       {/* Decorative elements */}
-      <div className="absolute top-40 left-20 w-96 h-96 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-pulse"></div>
-      <div className="absolute -bottom-20 right-20 w-96 h-96 bg-emerald-300 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-pulse" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute top-40 left-20 w-96 h-96 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-8 animate-pulse"></div>
+      <div className="absolute -bottom-20 right-20 w-96 h-96 bg-emerald-300 rounded-full mix-blend-multiply filter blur-3xl opacity-8 animate-pulse" style={{ animationDelay: '2s' }}></div>
 
       <div className="max-w-3xl mx-auto relative z-10">
         {/* Header */}
-        <div className="mb-16 text-center">
+        <div className="mb-12 text-center">
           <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent mb-4 animate-slideInDown">
             Experience
           </h2>
@@ -94,12 +94,12 @@ export default function Experience() {
                 {/* Card */}
                 <div className="group rounded-2xl p-6 md:p-8 border-2 border-emerald-200 bg-white/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-emerald-400 hover:shadow-lg hover:shadow-emerald-200/50">
                   {/* Top bar */}
-                  <div className="flex items-center justify-between mb-4">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
                     <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600">
                       Internship {String(i + 1).padStart(2, "0")}
                     </span>
                     <span className="text-xs text-gray-600 font-medium">
-                      {exp.issueDate} → {exp.finishDate}
+                      {exp.issueDate} &rarr; {exp.finishDate}
                     </span>
                   </div>
 

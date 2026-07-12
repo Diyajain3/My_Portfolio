@@ -284,6 +284,15 @@
   color: #10b981;
 }
 
+/* Responsive utilities */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-gray-900;
+}
+
 @media (max-width: 768px) {
   .timeline {
     padding-left: 45px;
@@ -311,3 +320,11 @@
     height: 350px;
   }
 }
+
+@media (max-width: 360px) {
+  .photo-frame {
+    width: 200px;
+    height: 280px;
+  }
+}
+
