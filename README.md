@@ -93,7 +93,7 @@ This project is licensed under the **MIT License**. See the [LICENSE](./LICENSE)
 
 **Diya Jain**
 GitHub: [@Diyajain3](https://github.com/Diyajain3)
-Portfolio: [my-portfolio-nine-ruby-90.vercel.app](https://my-portfolio-nine-ruby-90.vercel.app)
+
 
 ---
 
