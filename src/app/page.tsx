@@ -3,6 +3,7 @@
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
 import SplashScreen from "@/components/layout/SplashScreen";
+import AnimatedBackground3D from "@/components/AnimatedBackground3D";
 import Education from "@/sections/Education";
 import Hero from "@/sections/Hero"
 import Project from "@/sections/Project"
@@ -19,6 +20,7 @@ export default function Home() {
   const [showSplash, setShowSplash] = useState(true);
   return (
     <>
+    <AnimatedBackground3D />
     {showSplash && (
         <SplashScreen onFinish={() => setShowSplash(false)} />
       )}

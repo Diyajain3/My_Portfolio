@@ -1,6 +1,7 @@
 "use client";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { motion } from "framer-motion";
 
 import {
   Mail,
@@ -47,15 +48,33 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-emerald-300 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse hover:opacity-15 transition-opacity" style={{ animationDelay: '2s' }}></div>
 
       {/* Heading */}
-      <div className="text-center mb-10 md:mb-12 relative z-10">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent mb-4 animate-glow-pulse">
+      <motion.div 
+        className="text-center mb-10 md:mb-12 relative z-10"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <motion.h2 
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent mb-4 font-outfit"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
           Get In Touch
-        </h2>
+        </motion.h2>
 
-        <p className="mt-4 md:mt-6 text-gray-700 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed animate-slideInUp opacity-0" style={{ animationFillMode: 'forwards', animationDelay: '0.2s' }}>
+        <motion.p 
+          className="mt-4 md:mt-6 text-gray-700 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed font-poppins"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
           Have a project in mind or just want to say hello? I&apos;d love to hear from you. Let&apos;s collaborate and create something amazing together!
-        </p>
-      </div>
+        </motion.p>
+      </motion.div>
 
       <div className="grid lg:grid-cols-2 gap-6 max-w-7xl mx-auto relative z-10">
         {/* LEFT - Contact Info */}

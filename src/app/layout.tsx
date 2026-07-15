@@ -13,7 +13,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="bg-white">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:wght@400;500;700&family=Special+Elite&display=swap" rel="stylesheet" />
+      </head>
+      <body className="bg-white font-poppins">
         {children}
       </body>
     </html>

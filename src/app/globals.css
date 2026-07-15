@@ -2,6 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Font Configuration */
+@layer base {
+  body {
+    @apply font-poppins;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-outfit font-bold;
+  }
+
+  .font-special {
+    font-family: 'Special Elite', cursive;
+  }
+
+  .font-outfit {
+    font-family: 'Outfit', sans-serif;
+  }
+
+  .font-poppins {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
 /* Color Variables */
 :root {
   --primary: #059669;

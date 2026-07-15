@@ -22,6 +22,9 @@ module.exports = {
         display: ["'Space Grotesk'", "sans-serif"],
         mono: ["'JetBrains Mono'", "monospace"],
         sans: ["'Inter'", "sans-serif"],
+        outfit: ["'Outfit'", "sans-serif"],
+        poppins: ["'Poppins'", "sans-serif"],
+        special: ["'Special Elite'", "cursive"],
       },
       keyframes: {
         riseIn: {
