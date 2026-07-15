@@ -58,18 +58,18 @@ export default function Service() {
     <section className="relative bg-gradient-to-b from-emerald-50 via-white to-emerald-50 px-6 py-20 md:px-12 lg:px-20 overflow-hidden">
 
       {/* Decorative elements */}
-      <div className="absolute top-20 left-10 w-96 h-96 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-8 animate-pulse"></div>
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-emerald-300 rounded-full mix-blend-multiply filter blur-3xl opacity-8 animate-pulse" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute top-20 left-10 w-96 h-96 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse hover:opacity-15 transition-opacity"></div>
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-emerald-300 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse hover:opacity-15 transition-opacity" style={{ animationDelay: '2s' }}></div>
 
       <div className="relative z-10">
 
         {/* Heading */}
         <div className="mx-auto mb-12 max-w-3xl text-center">
-          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent animate-glow-pulse">
             My Services
           </h1>
 
-          <p className="mt-6 text-gray-700 leading-relaxed text-lg">
+          <p className="mt-6 text-gray-700 leading-relaxed text-lg animate-slideInUp opacity-0" style={{ animationFillMode: 'forwards', animationDelay: '0.2s' }}>
             I create modern, responsive and high-performance web solutions that help businesses grow online. From personal portfolios to complete e-commerce platforms, every project is designed with performance, scalability and user experience in mind.
           </p>
         </div>
@@ -84,26 +84,26 @@ export default function Service() {
             return (
               <div
                 key={index}
-                className="group relative overflow-hidden rounded-2xl border border-emerald-200 bg-white/80 backdrop-blur-sm p-6 sm:p-8 shadow-lg transition-all duration-500 hover:-translate-y-4 hover:border-emerald-400 hover:shadow-2xl hover:shadow-emerald-200/50"
+                className="group relative overflow-hidden rounded-2xl border border-emerald-200 bg-white/80 backdrop-blur-sm p-6 sm:p-8 shadow-lg transition-all duration-500 hover:-translate-y-5 hover:border-emerald-400 hover:shadow-2xl hover:shadow-emerald-300/50 hover:scale-105 animate-bounce-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
 
                 {/* Gradient overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
                 {/* Close Button */}
                 {isOpen && (
                   <button
                     onClick={() => setOpenIndex(null)}
-                    className="absolute right-5 top-5 rounded-full bg-emerald-100 p-2 transition-all duration-300 hover:bg-emerald-500 hover:text-white hover:scale-110 z-20"
+                    className="absolute right-5 top-5 rounded-full bg-emerald-100 p-2 transition-all duration-300 hover:bg-emerald-500 hover:text-white hover:scale-125 hover:rotate-90 z-20"
                   >
                     <X size={18} />
                   </button>
                 )}
 
                 {/* Icon */}
-                <div className="relative z-10 flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-600 to-emerald-500 text-white transition-all duration-500 group-hover:scale-125 group-hover:rotate-12 group-hover:shadow-lg group-hover:shadow-emerald-400/50">
-                  <Icon size={32} />
+                <div className="relative z-10 flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-600 to-emerald-500 text-white transition-all duration-500 group-hover:scale-135 group-hover:rotate-12 group-hover:shadow-lg group-hover:shadow-emerald-500/60 group-hover:-translate-y-2">
+                  <Icon size={32} className="group-hover:animate-bounce" />
                 </div>
 
                 {/* Title */}

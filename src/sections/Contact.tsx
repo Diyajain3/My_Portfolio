@@ -43,16 +43,16 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
       className="relative bg-gradient-to-b from-white via-emerald-50 to-emerald-100 py-16 md:py-24 px-4 sm:px-6 md:px-16 overflow-hidden"
     >
       {/* Decorative elements */}
-      <div className="absolute top-20 left-10 w-96 h-96 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-emerald-300 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute top-20 left-10 w-96 h-96 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse hover:opacity-15 transition-opacity"></div>
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-emerald-300 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse hover:opacity-15 transition-opacity" style={{ animationDelay: '2s' }}></div>
 
       {/* Heading */}
       <div className="text-center mb-10 md:mb-12 relative z-10">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent mb-4 animate-slideInDown">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent mb-4 animate-glow-pulse">
           Get In Touch
         </h2>
 
-        <p className="mt-4 md:mt-6 text-gray-700 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+        <p className="mt-4 md:mt-6 text-gray-700 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed animate-slideInUp opacity-0" style={{ animationFillMode: 'forwards', animationDelay: '0.2s' }}>
           Have a project in mind or just want to say hello? I&apos;d love to hear from you. Let&apos;s collaborate and create something amazing together!
         </p>
       </div>
@@ -60,7 +60,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
       <div className="grid lg:grid-cols-2 gap-6 max-w-7xl mx-auto relative z-10">
         {/* LEFT - Contact Info */}
 
-        <div className="group rounded-3xl bg-white/80 backdrop-blur-xl border border-emerald-200 shadow-xl hover:shadow-2xl hover:shadow-emerald-200/50 p-6 sm:p-8 md:p-10 transition-all duration-500 hover:-translate-y-2">
+        <div className="group rounded-3xl bg-white/80 backdrop-blur-xl border border-emerald-200 shadow-xl hover:shadow-2xl hover:shadow-emerald-300/50 p-6 sm:p-8 md:p-10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 hover:border-emerald-400 animate-slide-in-left">
 
           <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-emerald-900 mb-6 sm:mb-8 md:mb-10">
             Diya Jain
@@ -149,7 +149,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
       <form
   ref={form}
   onSubmit={sendEmail}
-  className="group rounded-3xl bg-white/80 backdrop-blur-xl border border-emerald-200 shadow-xl hover:shadow-2xl hover:shadow-emerald-200/50 p-6 sm:p-10 space-y-6 transition-all duration-500 hover:-translate-y-2"
+  className="group rounded-3xl bg-white/80 backdrop-blur-xl border border-emerald-200 shadow-xl hover:shadow-2xl hover:shadow-emerald-300/50 p-6 sm:p-10 space-y-6 transition-all duration-500 hover:-translate-y-3 hover:scale-105 hover:border-emerald-400 animate-slide-in-right"
 >
 
           <div>
@@ -159,7 +159,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
   name="name"
   placeholder="John Doe"
   required
-              className="w-full rounded-xl border-2 border-emerald-200 p-4 outline-none focus:border-emerald-500 focus:bg-emerald-50 transition-all duration-300 font-medium"
+              className="w-full rounded-xl border-2 border-emerald-200 p-4 outline-none focus:border-emerald-500 focus:bg-emerald-50 transition-all duration-300 font-medium hover:border-emerald-300 focus:shadow-lg focus:shadow-emerald-200/50"
             />
           </div>
 
@@ -170,7 +170,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
   name="email"
   placeholder="your@email.com"
   required
-              className="w-full rounded-xl border-2 border-emerald-200 p-4 outline-none focus:border-emerald-500 focus:bg-emerald-50 transition-all duration-300 font-medium"
+              className="w-full rounded-xl border-2 border-emerald-200 p-4 outline-none focus:border-emerald-500 focus:bg-emerald-50 transition-all duration-300 font-medium hover:border-emerald-300 focus:shadow-lg focus:shadow-emerald-200/50"
             />
           </div>
 
@@ -181,7 +181,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
   name="title"
   placeholder="What is this about?"
   required
-              className="w-full rounded-xl border-2 border-emerald-200 p-4 outline-none focus:border-emerald-500 focus:bg-emerald-50 transition-all duration-300 font-medium"
+              className="w-full rounded-xl border-2 border-emerald-200 p-4 outline-none focus:border-emerald-500 focus:bg-emerald-50 transition-all duration-300 font-medium hover:border-emerald-300 focus:shadow-lg focus:shadow-emerald-200/50"
             />
           </div>
 
@@ -192,19 +192,19 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
   rows={5}
   required
   placeholder="Tell me about your project..."
-              className="w-full rounded-xl border-2 border-emerald-200 p-4 outline-none focus:border-emerald-500 focus:bg-emerald-50 transition-all duration-300 resize-none font-medium"
+              className="w-full rounded-xl border-2 border-emerald-200 p-4 outline-none focus:border-emerald-500 focus:bg-emerald-50 transition-all duration-300 resize-none font-medium hover:border-emerald-300 focus:shadow-lg focus:shadow-emerald-200/50"
             />
           </div>
 
           <button
             type="submit"
-            className="group/btn w-full rounded-xl bg-gradient-to-r from-emerald-600 via-emerald-500 to-emerald-600 py-4 text-white font-bold flex justify-center items-center gap-3 hover:from-emerald-700 hover:via-emerald-600 hover:to-emerald-700 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-emerald-400/50 active:scale-95"
+            className="group/btn w-full rounded-xl bg-gradient-to-r from-emerald-600 via-emerald-500 to-emerald-600 py-4 text-white font-bold flex justify-center items-center gap-3 hover:from-emerald-700 hover:via-emerald-600 hover:to-emerald-700 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/60 active:scale-95 hover:-translate-y-1"
           >
             Send Message
 
             <Send
               size={20}
-              className="group-hover/btn:translate-x-1 group-hover/btn:translate-y-0 transition-transform duration-300"
+              className="group-hover/btn:translate-x-2 group-hover/btn:animate-bounce transition-transform duration-300"
             />
           </button>
         </form>

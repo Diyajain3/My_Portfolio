@@ -57,17 +57,17 @@ export default function Skills() {
 
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Header */}
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 border border-emerald-200 mb-4">
+        <div className="text-center mb-12 animate-slideInDown">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 border border-emerald-200 mb-4 animate-bounce-in">
             <Code2 size={18} className="text-emerald-600" />
             <span className="text-sm font-bold text-emerald-700 tracking-wide">
               MY TECH STACK
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-emerald-900 mb-3">
+          <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent mb-3 animate-glow-pulse">
             Skills &amp; Technologies
           </h2>
-          <p className="text-base text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base text-gray-600 max-w-2xl mx-auto leading-relaxed animate-slideInUp">
             Tools and technologies I use to build modern, responsive and scalable
             web applications.
           </p>
@@ -75,18 +75,22 @@ export default function Skills() {
 
         {/* Skills Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-          {skills.map(({ name, icon: Icon, color }) => (
+          {skills.map(({ name, icon: Icon, color }, index) => (
             <div
               key={name}
-              className="group flex flex-col items-center justify-center gap-3 rounded-2xl bg-white border border-emerald-100 p-5 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-emerald-300"
+              style={{ animationDelay: `${index * 0.08}s` }}
+              className="group flex flex-col items-center justify-center gap-3 rounded-2xl bg-white border border-emerald-100 p-5 shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-3 hover:border-emerald-400 hover:scale-105 animate-bounce-in relative overflow-hidden"
             >
+              {/* Hover glow effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/0 to-emerald-400/0 group-hover:from-emerald-400/20 group-hover:to-emerald-400/10 transition-all duration-300 rounded-2xl"></div>
+              
               <div
-                className="flex items-center justify-center w-14 h-14 rounded-2xl transition-transform duration-300 group-hover:scale-110"
+                className="flex items-center justify-center w-14 h-14 rounded-2xl transition-all duration-300 group-hover:scale-125 group-hover:rotate-12 relative z-10"
                 style={{ backgroundColor: `${color}1A` }}
               >
                 <Icon size={30} style={{ color }} />
               </div>
-              <span className="text-sm font-semibold text-gray-800 group-hover:text-emerald-700 transition-colors">
+              <span className="text-sm font-semibold text-gray-800 group-hover:text-emerald-700 transition-colors relative z-10">
                 {name}
               </span>
             </div>

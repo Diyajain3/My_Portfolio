@@ -1,6 +1,6 @@
 "use client";
 
-import { Github, Linkedin, Mail, ExternalLink } from "lucide-react";
+import { Github, Linkedin, Mail, ExternalLink, Activity } from "lucide-react";
 
 const footLinks = [
   { name: "Home", href: "#hero" },
@@ -108,14 +108,36 @@ export default function Footer() {
         {/* Divider */}
         <div className="h-px bg-gradient-to-r from-transparent via-emerald-600/50 to-transparent mb-8"></div>
 
-        {/* Bottom Section */}
-        <div className="text-center">
-          <p className="text-emerald-200/80 text-sm mb-4">
-            Crafted with passion and clean code
-          </p>
-          <p className="text-emerald-300/60 text-xs font-medium">
-            © 2024 Diya Jain. All rights reserved.
-          </p>
+        {/* Status & Copyright Section */}
+        <div className="text-center space-y-6">
+          <div className="flex items-center justify-center gap-2">
+            <a 
+              href="https://status.diya-portfolio.com" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-emerald-500/10 to-emerald-400/10 border border-emerald-500/30 hover:border-emerald-400 transition-all duration-300 hover:bg-emerald-500/20"
+            >
+              <div className="relative flex items-center gap-1.5">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                <span className="text-xs sm:text-sm font-semibold text-emerald-200 group-hover:text-emerald-100 transition-colors">
+                  System Status
+                </span>
+              </div>
+              <ExternalLink size={14} className="text-emerald-300 group-hover:text-emerald-100 transition-colors" />
+            </a>
+          </div>
+          
+          <div className="space-y-2">
+            <p className="text-emerald-200/80 text-sm">
+              Crafted with passion and clean code
+            </p>
+            <p className="text-emerald-300/60 text-xs font-medium">
+              © 2024 Diya Jain. All rights reserved.
+            </p>
+          </div>
         </div>
       </div>
 

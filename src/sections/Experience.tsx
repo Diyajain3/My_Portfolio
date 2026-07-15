@@ -55,16 +55,16 @@ export default function Experience() {
   return (
     <section className="relative bg-gradient-to-b from-white via-emerald-50 to-emerald-100 py-24 px-6 overflow-hidden">
       {/* Decorative elements */}
-      <div className="absolute top-40 left-20 w-96 h-96 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-8 animate-pulse"></div>
-      <div className="absolute -bottom-20 right-20 w-96 h-96 bg-emerald-300 rounded-full mix-blend-multiply filter blur-3xl opacity-8 animate-pulse" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute top-40 left-20 w-96 h-96 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse hover:opacity-15 transition-opacity"></div>
+      <div className="absolute -bottom-20 right-20 w-96 h-96 bg-emerald-300 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse hover:opacity-15 transition-opacity" style={{ animationDelay: '2s' }}></div>
 
       <div className="max-w-3xl mx-auto relative z-10">
         {/* Header */}
         <div className="mb-12 text-center">
-          <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent mb-4 animate-slideInDown">
+          <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent mb-4 animate-glow-pulse">
             Experience
           </h2>
-          <p className="text-gray-700 text-lg">
+          <p className="text-gray-700 text-lg animate-slideInUp opacity-0" style={{ animationFillMode: 'forwards', animationDelay: '0.2s' }}>
             Professional development experience and internships
           </p>
         </div>
@@ -92,24 +92,27 @@ export default function Experience() {
                 </div>
 
                 {/* Card */}
-                <div className="group rounded-2xl p-6 md:p-8 border-2 border-emerald-200 bg-white/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-emerald-400 hover:shadow-lg hover:shadow-emerald-200/50">
+                <div className="group rounded-2xl p-6 md:p-8 border-2 border-emerald-200 bg-white/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-3 hover:border-emerald-400 hover:shadow-xl hover:shadow-emerald-200/70 hover:scale-102 relative overflow-hidden">
+                  {/* Hover glow effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/0 to-emerald-400/0 group-hover:from-emerald-400/10 group-hover:to-emerald-400/5 transition-all duration-300"></div>
+
                   {/* Top bar */}
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4 relative z-10">
+                    <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600 group-hover:text-emerald-700 transition-colors">
                       Internship {String(i + 1).padStart(2, "0")}
                     </span>
-                    <span className="text-xs text-gray-600 font-medium">
+                    <span className="text-xs text-gray-600 font-medium group-hover:text-emerald-600 transition-colors">
                       {exp.issueDate} &rarr; {exp.finishDate}
                     </span>
                   </div>
 
-                  <h3 className="text-2xl font-bold mb-2 text-emerald-900 group-hover:text-emerald-700 transition-colors">
+                  <h3 className="text-2xl font-bold mb-2 text-emerald-900 group-hover:text-emerald-700 transition-colors relative z-10">
                     {exp.companyname}
                   </h3>
 
-                  <p className="text-base mb-4 text-emerald-600 font-semibold">{exp.role}</p>
+                  <p className="text-base mb-4 text-emerald-600 font-semibold group-hover:text-emerald-700 transition-colors relative z-10">{exp.role}</p>
 
-                  <p className="text-sm leading-relaxed mb-6 text-gray-700">
+                  <p className="text-sm leading-relaxed mb-6 text-gray-700 group-hover:text-gray-800 transition-colors relative z-10">
                     {exp.WhatIDid}
                   </p>
 
@@ -117,10 +120,10 @@ export default function Experience() {
                     href={exp.certificateLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-semibold px-5 py-2.5 rounded-lg border-2 border-emerald-600 text-emerald-600 hover:bg-emerald-600 hover:text-white transition-all duration-300 hover:shadow-md hover:shadow-emerald-200"
+                    className="inline-flex items-center gap-2 text-sm font-semibold px-5 py-2.5 rounded-lg border-2 border-emerald-600 text-emerald-600 hover:bg-emerald-600 hover:text-white transition-all duration-300 hover:shadow-lg hover:shadow-emerald-300/50 hover:scale-105 relative z-10 group/btn"
                   >
                     View Certificate
-                    <ExternalLink size={16} />
+                    <ExternalLink size={16} className="group-hover/btn:translate-x-1 transition-transform" />
                   </a>
                 </div>
               </div>

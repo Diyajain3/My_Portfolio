@@ -95,11 +95,11 @@ const imageThemes: Record<ThemeKey, { ring: string; shadow: string; overlay: str
       ></div>
 
       <div className="max-w-6xl mx-auto relative z-10">
-        <h1 className="text-5xl md:text-6xl font-bold text-center bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent mb-12 animate-slideInDown">
+        <h1 className="text-5xl md:text-6xl font-bold text-center bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent mb-12 animate-glow-pulse">
           My Projects
         </h1>
 
-        <div className="grid md:grid-cols-2 gap-8 items-center bg-white/80 backdrop-blur-md rounded-3xl shadow-2xl border border-emerald-100 p-6 sm:p-8 md:p-12 animate-slideInUp">
+        <div className="grid md:grid-cols-2 gap-8 items-center bg-white/80 backdrop-blur-md rounded-3xl shadow-2xl border border-emerald-100 p-6 sm:p-8 md:p-12 animate-slideInUp hover:shadow-3xl hover:shadow-emerald-300/50 transition-all duration-300 hover:border-emerald-300">
           {/* Left */}
           <div className="space-y-4">
             <h2 className="text-4xl md:text-5xl font-bold text-emerald-900 leading-tight">
@@ -115,7 +115,8 @@ const imageThemes: Record<ThemeKey, { ring: string; shadow: string; overlay: str
               {project.skills.split(",").map((skill, index) => (
                 <span
                   key={index}
-                  className="group relative bg-gradient-to-r from-emerald-100 to-emerald-50 text-emerald-800 px-4 py-2 rounded-full font-semibold text-sm border border-emerald-200 hover:border-emerald-400 transition-all duration-300 hover:shadow-md hover:shadow-emerald-200 cursor-default"
+                  className="group relative bg-gradient-to-r from-emerald-100 to-emerald-50 text-emerald-800 px-4 py-2 rounded-full font-semibold text-sm border border-emerald-200 hover:border-emerald-400 transition-all duration-300 hover:shadow-md hover:shadow-emerald-300/50 hover:scale-105 hover:-translate-y-1 cursor-default animate-bounce-in"
+                  style={{ animationDelay: `${index * 0.05}s` }}
                 >
                   {skill.trim()}
                 </span>
