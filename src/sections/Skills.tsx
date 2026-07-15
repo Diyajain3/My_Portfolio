@@ -138,20 +138,25 @@ export default function Skills() {
               ></motion.div>
               
               <motion.div
-                className="flex items-center justify-center w-14 h-14 rounded-2xl relative z-10"
-                style={{ backgroundColor: `${color}1A` }}
-                whileHover={{ scale: 1.3, rotate: 12 }}
-                whileTap={{ scale: 0.9 }}
+                className="flex flex-col items-center justify-center gap-3 h-full"
               >
-                <Icon size={30} style={{ color }} />
+                <motion.div
+                  className="flex items-center justify-center w-14 h-14 rounded-2xl relative z-10"
+                  style={{ backgroundColor: `${color}1A` }}
+                  whileHover={{ scale: 1.3, rotate: 12 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <Icon size={30} style={{ color }} />
+                </motion.div>
+                <motion.span 
+                  className="text-base md:text-lg font-bold text-gray-800 transition-colors relative z-10 font-poppins text-center"
+                  initial={{ opacity: 0, y: 10 }}
+                  whileHover={{ opacity: 1, y: 0, color: "#047857" }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {name}
+                </motion.span>
               </motion.div>
-              <motion.span 
-                className="text-base md:text-lg font-bold text-gray-800 group-hover:text-emerald-700 transition-colors relative z-10 font-poppins text-center"
-                initial={{ opacity: 0 }}
-                whileHover={{ opacity: 1, color: "#047857" }}
-              >
-                {name}
-              </motion.span>
             </motion.div>
           ))}
         </motion.div>
