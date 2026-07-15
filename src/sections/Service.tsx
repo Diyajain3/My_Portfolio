@@ -64,12 +64,12 @@ export default function Service() {
       <div className="relative z-10">
 
         {/* Heading */}
-        <div className="mx-auto mb-12 max-w-3xl text-center">
-          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent animate-glow-pulse">
+        <div className="mx-auto mb-16 max-w-4xl text-center">
+          <h1 className="text-5xl md:text-7xl font-black bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent font-outfit tracking-tight">
             My Services
           </h1>
 
-          <p className="mt-6 text-gray-700 leading-relaxed text-lg animate-slideInUp opacity-0" style={{ animationFillMode: 'forwards', animationDelay: '0.2s' }}>
+          <p className="mt-8 text-gray-700 leading-relaxed text-xl md:text-2xl font-poppins">
             I create modern, responsive and high-performance web solutions that help businesses grow online. From personal portfolios to complete e-commerce platforms, every project is designed with performance, scalability and user experience in mind.
           </p>
         </div>

@@ -58,7 +58,7 @@ const y = useTransform(smoothProgress, [0, 1], [0, Math.max(0, timelineHeight - 
       <div className="absolute top-20 left-10 w-80 h-80 bg-emerald-200/10 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute bottom-10 right-10 w-80 h-80 bg-emerald-300/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }}></div>
 
-      <h1 className="text-5xl md:text-6xl font-bold text-center bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent mb-12 relative z-10 animate-glow-pulse">
+      <h1 className="text-6xl md:text-8xl font-black text-center bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent mb-16 relative z-10 font-outfit tracking-tight">
         Education
       </h1>
 

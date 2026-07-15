@@ -56,7 +56,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
         viewport={{ once: true }}
       >
         <motion.h2 
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent mb-4 font-outfit"
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent mb-6 font-outfit tracking-tight"
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -66,7 +66,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
         </motion.h2>
 
         <motion.p 
-          className="mt-4 md:mt-6 text-gray-700 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed font-poppins"
+          className="mt-6 md:mt-8 text-gray-700 text-xl md:text-2xl lg:text-3xl max-w-3xl mx-auto leading-relaxed font-poppins"
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -81,7 +81,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
 
         <div className="group rounded-3xl bg-white/80 backdrop-blur-xl border border-emerald-200 shadow-xl hover:shadow-2xl hover:shadow-emerald-300/50 p-6 sm:p-8 md:p-10 transition-all duration-500 hover:-translate-y-3 hover:scale-105 hover:border-emerald-400 animate-slide-in-left">
 
-          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-emerald-900 mb-6 sm:mb-8 md:mb-10">
+          <h3 className="text-4xl sm:text-5xl md:text-6xl font-black text-emerald-900 mb-6 sm:mb-8 md:mb-10 font-outfit tracking-tight">
             Diya Jain
           </h3>
 

@@ -60,11 +60,11 @@ export default function Experience() {
 
       <div className="max-w-3xl mx-auto relative z-10">
         {/* Header */}
-        <div className="mb-12 text-center">
-          <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent mb-4 animate-glow-pulse">
+        <div className="mb-16 text-center">
+          <h2 className="text-6xl md:text-8xl font-black bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent mb-6 font-outfit tracking-tight">
             Experience
           </h2>
-          <p className="text-gray-700 text-lg animate-slideInUp opacity-0" style={{ animationFillMode: 'forwards', animationDelay: '0.2s' }}>
+          <p className="text-gray-700 text-xl md:text-2xl font-poppins">
             Professional development experience and internships
           </p>
         </div>

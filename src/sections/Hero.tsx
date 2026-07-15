@@ -83,30 +83,30 @@ export default function Hero() {
         </motion.div>
 
         {/* Right Section - Content */}
-        <motion.div className="space-y-3 md:space-y-4 order-1 md:order-2" variants={containerVariants}>
+        <motion.div className="space-y-4 md:space-y-6 order-1 md:order-2" variants={containerVariants}>
           <motion.p 
-            className="text-emerald-600 text-base sm:text-lg font-semibold font-poppins"
+            className="text-emerald-600 text-lg sm:text-xl md:text-2xl font-semibold font-poppins tracking-wide"
             variants={itemVariants}
           >
             Hello, I&apos;m
           </motion.p>
 
           <motion.h1 
-            className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-emerald-900 leading-tight font-outfit"
+            className="text-6xl sm:text-7xl md:text-8xl font-black text-emerald-900 leading-tight font-outfit tracking-tight"
             variants={itemVariants}
           >
             Diya Jain
           </motion.h1>
 
           <motion.h2 
-            className="text-xl sm:text-2xl md:text-3xl text-emerald-600 font-bold font-poppins"
+            className="text-3xl sm:text-4xl md:text-5xl text-emerald-600 font-bold font-outfit tracking-wide"
             variants={itemVariants}
           >
             Full Stack MERN Developer
           </motion.h2>
 
           <motion.p 
-            className="text-gray-700 leading-relaxed text-sm sm:text-base md:text-lg font-poppins"
+            className="text-gray-700 leading-relaxed text-lg sm:text-xl md:text-2xl font-poppins pt-2"
             variants={itemVariants}
           >
             I am a passionate Full Stack MERN Developer with experience in building scalable and responsive web applications. I enjoy solving Data Structures & Algorithms problems and continuously improving my development skills by building real-world projects.
@@ -140,14 +140,14 @@ export default function Hero() {
 
           {/* Buttons */}
           <motion.div 
-            className="flex flex-wrap gap-3 sm:gap-4 pt-4 sm:pt-6"
+            className="flex flex-wrap gap-4 sm:gap-6 pt-6 sm:pt-8"
             variants={containerVariants}
           >
             <motion.a
               href="https://drive.google.com/file/d/18xJDvmKCIYnMFQ8UDu0qaTIf_3FFQTLQ/view"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative bg-gradient-to-r from-emerald-600 to-emerald-500 text-white px-4 sm:px-8 py-2.5 sm:py-3 rounded-full text-sm sm:text-base font-semibold hover:from-emerald-700 hover:to-emerald-600 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-400/50 overflow-hidden font-poppins"
+              className="group relative bg-gradient-to-r from-emerald-600 to-emerald-500 text-white px-6 sm:px-10 py-3 sm:py-4 rounded-full text-base sm:text-lg md:text-xl font-bold hover:from-emerald-700 hover:to-emerald-600 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-400/50 overflow-hidden font-outfit"
               whileHover={{ scale: 1.1, y: -4 }}
               whileTap={{ scale: 0.95 }}
               variants={itemVariants}
@@ -162,13 +162,13 @@ export default function Hero() {
 
             <motion.a
               href="#contact"
-              className="group relative border-2 border-emerald-600 text-emerald-600 px-4 sm:px-8 py-2.5 sm:py-3 rounded-full text-sm sm:text-base font-semibold hover:bg-emerald-600 hover:text-white transition-all duration-300 hover:shadow-lg hover:shadow-emerald-400/50 flex items-center gap-2 overflow-hidden font-poppins"
+              className="group relative border-2 border-emerald-600 text-emerald-600 px-6 sm:px-10 py-3 sm:py-4 rounded-full text-base sm:text-lg md:text-xl font-bold hover:bg-emerald-600 hover:text-white transition-all duration-300 hover:shadow-lg hover:shadow-emerald-400/50 flex items-center gap-2 overflow-hidden font-outfit"
               whileHover={{ scale: 1.1, y: -4 }}
               whileTap={{ scale: 0.95 }}
               variants={itemVariants}
             >
               <span className="absolute inset-0 bg-emerald-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-              <Mail size={18} className="relative z-10 group-hover:animate-bounce" />
+              <Mail size={20} className="relative z-10 group-hover:animate-bounce" />
               <span className="relative z-10">Contact Me</span>
             </motion.a>
           </motion.div>

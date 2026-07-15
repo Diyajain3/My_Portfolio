@@ -78,7 +78,7 @@ export default function Skills() {
             </span>
           </motion.div>
           <motion.h2 
-            className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent mb-3 font-outfit"
+            className="text-5xl md:text-7xl font-black bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent mb-4 font-outfit tracking-tight"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -87,7 +87,7 @@ export default function Skills() {
             Skills &amp; Technologies
           </motion.h2>
           <motion.p 
-            className="text-base text-gray-600 max-w-2xl mx-auto leading-relaxed font-poppins"
+            className="text-lg md:text-2xl text-gray-600 max-w-2xl mx-auto leading-relaxed font-poppins"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -146,7 +146,7 @@ export default function Skills() {
                 <Icon size={30} style={{ color }} />
               </motion.div>
               <motion.span 
-                className="text-sm font-semibold text-gray-800 group-hover:text-emerald-700 transition-colors relative z-10 font-poppins"
+                className="text-base md:text-lg font-bold text-gray-800 group-hover:text-emerald-700 transition-colors relative z-10 font-poppins text-center"
                 initial={{ opacity: 0 }}
                 whileHover={{ opacity: 1, color: "#047857" }}
               >

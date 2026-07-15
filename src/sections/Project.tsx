@@ -146,15 +146,15 @@ const projectThemes: Record<ThemeKey, {
           {/* Left Section */}
           <motion.div className="space-y-6" variants={containerVariants} initial="hidden" animate="visible">
             <motion.div variants={itemVariants}>
-              <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold mb-2 ${theme.badge} font-poppins`}>
+              <span className={`inline-block px-4 py-2 rounded-full text-sm font-bold mb-3 ${theme.badge} font-outfit tracking-wide`}>
                 Project {current + 1} of {projectdata.length}
               </span>
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight font-outfit">
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 leading-tight font-outfit tracking-tight">
                 {project.name}
               </h2>
             </motion.div>
 
-            <motion.p className="text-gray-700 leading-relaxed text-lg font-poppins" variants={itemVariants}>
+            <motion.p className="text-gray-700 leading-relaxed text-xl md:text-2xl font-poppins" variants={itemVariants}>
               {project.descp}
             </motion.p>
 
@@ -163,7 +163,7 @@ const projectThemes: Record<ThemeKey, {
               {project.skills.split(",").map((skill) => (
                 <motion.span
                   key={skill}
-                  className="bg-white border border-emerald-200 text-emerald-700 px-4 py-2 rounded-full font-semibold text-sm hover:border-emerald-400 hover:bg-emerald-50 transition-all duration-300 font-poppins"
+                  className="bg-white border border-emerald-200 text-emerald-700 px-4 py-2 rounded-full font-semibold text-base md:text-lg hover:border-emerald-400 hover:bg-emerald-50 transition-all duration-300 font-poppins"
                   variants={itemVariants}
                   whileHover={{ scale: 1.05, y: -2 }}
                 >
@@ -178,12 +178,12 @@ const projectThemes: Record<ThemeKey, {
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`group flex items-center gap-2 bg-gradient-to-r ${theme.accent} text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg font-poppins`}
+                className={`group flex items-center gap-2 bg-gradient-to-r ${theme.accent} text-white px-8 py-4 rounded-full font-bold text-lg md:text-xl transition-all duration-300 shadow-lg font-outfit`}
                 variants={itemVariants}
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Github size={20} className="group-hover:rotate-12 transition-transform" />
+                <Github size={24} className="group-hover:rotate-12 transition-transform" />
                 GitHub
               </motion.a>
 
@@ -192,12 +192,12 @@ const projectThemes: Record<ThemeKey, {
                   href={project.LiveDemo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`group flex items-center gap-2 border-2 bg-white ${theme.border} text-gray-900 px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:shadow-lg font-poppins`}
+                  className={`group flex items-center gap-2 border-2 bg-white ${theme.border} text-gray-900 px-8 py-4 rounded-full font-bold text-lg md:text-xl transition-all duration-300 hover:shadow-lg font-outfit`}
                   variants={itemVariants}
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <ExternalLink size={20} className="group-hover:translate-x-1 transition-transform" />
+                  <ExternalLink size={24} className="group-hover:translate-x-1 transition-transform" />
                   Live Demo
                 </motion.a>
               )}
