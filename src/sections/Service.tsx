@@ -15,7 +15,7 @@ const servicedata = [
     myApproach:
       "I design and build modern, high-performance websites from the ground up — focused on clean UI, scalable architecture, and a smooth user experience.",
     skillUsed:
-      "React.js, JavaScript, HTML5, CSS3, Tailwind CSS, Node.js, Express.js, MongoDB, Git",
+      "React.js, Next.js, TypeScript, JavaScript, HTML5, CSS3, Tailwind CSS, Node.js, Express.js, MongoDB, PostgreSQL, RESTful APIs, Git",
     whatYouGet:
       "A responsive website with clean code, fast performance, SEO optimization, and scalable architecture.",
   },
@@ -25,7 +25,7 @@ const servicedata = [
     myApproach:
       "I create responsive web applications that work perfectly on phones, tablets, laptops, and desktops.",
     skillUsed:
-      "React.js, Tailwind CSS, Responsive Design, CSS Grid, Flexbox",
+      "React.js, Next.js, TypeScript, Redux Toolkit, Tailwind CSS, Responsive Design, HTML5, CSS3",
     whatYouGet:
       "A seamless experience across every device with optimized layouts and smooth performance.",
   },
@@ -35,7 +35,7 @@ const servicedata = [
     myApproach:
       "Professional websites that showcase your brand, services, and achievements with a clean modern design.",
     skillUsed:
-      "React.js, Tailwind CSS, JavaScript, Framer Motion",
+      "React.js, Next.js, TypeScript, Tailwind CSS, JavaScript, Responsive Design, Redux Toolkit",
     whatYouGet:
       "Beautiful portfolio or business website with contact form, responsive UI, and SEO-friendly pages.",
   },
@@ -45,7 +45,7 @@ const servicedata = [
     myApproach:
       "Secure and scalable online stores with product management and modern shopping experiences.",
     skillUsed:
-      "React.js, Node.js, Express.js, MongoDB, JWT Authentication",
+      "React.js, Next.js, TypeScript, Node.js, Express.js, MongoDB, PostgreSQL, Mongoose, JWT, bcrypt, Secure API Design",
     whatYouGet:
       "Complete shopping website including authentication, products, orders, payments, and responsive UI.",
   },

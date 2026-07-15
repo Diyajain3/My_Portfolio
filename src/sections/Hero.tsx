@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import diya from "@/images/diyaaa.jpg";
 import { Github, Linkedin, FileText, Mail } from "lucide-react";
 
 export default function Hero() {
@@ -11,15 +12,17 @@ export default function Hero() {
     >
       {/* Animated background elements */}
       <div className="absolute top-10 right-20 w-72 h-72 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
-      <div className="absolute -bottom-8 left-10 w-72 h-72 bg-emerald-300 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse" style={{ animationDelay: '2s' }}></div>
+      <div
+        className="absolute -bottom-8 left-10 w-72 h-72 bg-emerald-300 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"
+        style={{ animationDelay: "2s" }}
+      ></div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-12 grid md:grid-cols-2 gap-6 md:gap-12 items-center relative z-10 pt-24 pb-12 md:py-16 lg:py-0">
-
         {/* Left Section - Image */}
         <div className="flex justify-center order-2 md:order-1">
           <div className="photo-frame">
             <Image
-              src="/diyaaa.jpeg"
+              src={diya}
               alt="Diya Jain"
               fill
               className="photo object-cover"
@@ -30,35 +33,53 @@ export default function Hero() {
 
         {/* Right Section - Content */}
         <div className="space-y-3 md:space-y-4 order-1 md:order-2">
-
-          <p className="text-emerald-600 text-base sm:text-lg font-semibold animate-slideInDown opacity-0" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
+          <p
+            className="text-emerald-600 text-base sm:text-lg font-semibold animate-slideInDown opacity-0"
+            style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}
+          >
             Hello, I&apos;m
           </p>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-emerald-900 animate-slideInDown opacity-0 leading-tight" style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}>
+          <h1
+            className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-emerald-900 animate-slideInDown opacity-0 leading-tight"
+            style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}
+          >
             Diya Jain
           </h1>
 
-          <h2 className="text-xl sm:text-2xl md:text-3xl text-emerald-600 font-bold animate-slideInDown opacity-0" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
+          <h2
+            className="text-xl sm:text-2xl md:text-3xl text-emerald-600 font-bold animate-slideInDown opacity-0"
+            style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}
+          >
             Full Stack MERN Developer
           </h2>
 
-          <p className="text-gray-700 leading-relaxed text-sm sm:text-base md:text-lg animate-slideInDown opacity-0" style={{ animationDelay: '0.5s', animationFillMode: 'forwards' }}>
-            I am a passionate Full Stack MERN Developer with experience in building scalable and responsive web applications. I enjoy solving Data Structures & Algorithms problems and continuously improving my development skills by building real-world projects.
+          <p
+            className="text-gray-700 leading-relaxed text-sm sm:text-base md:text-lg animate-slideInDown opacity-0"
+            style={{ animationDelay: "0.5s", animationFillMode: "forwards" }}
+          >
+            I am a passionate Full Stack MERN Developer with experience in
+            building scalable and responsive web applications. I enjoy solving
+            Data Structures & Algorithms problems and continuously improving my
+            development skills by building real-world projects.
           </p>
 
           {/* Social Icons */}
-          <div className="flex gap-3 sm:gap-4 pt-3 sm:pt-4 animate-slideInDown opacity-0" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>
-
+          <div
+            className="flex gap-3 sm:gap-4 pt-3 sm:pt-4 animate-slideInDown opacity-0"
+            style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}
+          >
             <a
               href="https://github.com/Diyajain3"
-              target="_blank"
+              target="_blank" //opens the link in a new browser tab
               rel="noopener noreferrer"
               className="group relative bg-emerald-600 p-2 sm:p-3 rounded-full text-white hover:bg-emerald-700 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-emerald-400/50"
             >
               <Github size={18} className="sm:hidden" />
               <Github size={22} className="hidden sm:block" />
-              <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-emerald-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">GitHub</span>
+              <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-emerald-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                GitHub
+              </span>
             </a>
 
             <a
@@ -69,7 +90,9 @@ export default function Hero() {
             >
               <Linkedin size={18} className="sm:hidden" />
               <Linkedin size={22} className="hidden sm:block" />
-              <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-emerald-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">LinkedIn</span>
+              <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-emerald-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                LinkedIn
+              </span>
             </a>
 
             <a
@@ -80,14 +103,17 @@ export default function Hero() {
             >
               <FileText size={18} className="sm:hidden" />
               <FileText size={22} className="hidden sm:block" />
-              <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-emerald-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Resume</span>
+              <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-emerald-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                Resume
+              </span>
             </a>
-
           </div>
 
           {/* Buttons */}
-          <div className="flex flex-wrap gap-3 sm:gap-4 pt-4 sm:pt-6 animate-slideInDown opacity-0" style={{ animationDelay: '0.7s', animationFillMode: 'forwards' }}>
-
+          <div
+            className="flex flex-wrap gap-3 sm:gap-4 pt-4 sm:pt-6 animate-slideInDown opacity-0"
+            style={{ animationDelay: "0.7s", animationFillMode: "forwards" }}
+          >
             <a
               href="https://drive.google.com/file/d/18xJDvmKCIYnMFQ8UDu0qaTIf_3FFQTLQ/view"
               target="_blank"
@@ -106,11 +132,8 @@ export default function Hero() {
               <Mail size={18} className="hidden sm:block relative z-10" />
               <span className="relative z-10">Contact Me</span>
             </a>
-
           </div>
-
         </div>
-
       </div>
     </section>
   );

@@ -21,7 +21,7 @@ module.exports = {
       fontFamily: {
         display: ["'Space Grotesk'", "sans-serif"],
         mono: ["'JetBrains Mono'", "monospace"],
-        sans: ["'Inter'", "sans-serif"],
+        sans: ["'Antic Slab'", "serif"],
       },
       keyframes: {
         riseIn: {

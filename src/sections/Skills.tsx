@@ -78,7 +78,7 @@ export default function Skills() {
           {skills.map(({ name, icon: Icon, color }) => (
             <div
               key={name}
-              className="group flex flex-col items-center justify-center gap-3 rounded-2xl bg-white border border-emerald-100 p-5 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-emerald-300"
+              className="group flex flex-col items-center justify-center gap-3 rounded-2xl bg-white border border-emerald-100 p-3 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-emerald-300"
             >
               <div
                 className="flex items-center justify-center w-14 h-14 rounded-2xl transition-transform duration-300 group-hover:scale-110"

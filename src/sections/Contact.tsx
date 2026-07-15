@@ -134,7 +134,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
             </a>
 
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/diya.3003/"
               target="_blank"
               rel="noopener noreferrer"
               className="group/social bg-gradient-to-br from-emerald-600 to-emerald-500 p-4 rounded-full text-white hover:from-emerald-700 hover:to-emerald-600 transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-emerald-400/50"
