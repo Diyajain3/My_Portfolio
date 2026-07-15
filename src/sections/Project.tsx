@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Github, ExternalLink } from "lucide-react";
 import SnapResume from "@/images/SnapResume.png";
 import TrickTask from "@/images/TrickTask.png";
@@ -50,22 +51,34 @@ export default function Project() {
     },
   ];
 
-  // Only used for the image's hover glow/ring/overlay — everything else stays emerald.
-const imageThemes: Record<ThemeKey, { ring: string; shadow: string; overlay: string }> = {
+  // Theme colors integrated throughout the card
+const projectThemes: Record<ThemeKey, { 
+  badge: string; 
+  accent: string; 
+  light: string; 
+  border: string;
+  imageBg: string;
+}> = {
   blue: {
-    ring: "group-hover:ring-blue-400/50",
-    shadow: "group-hover:shadow-blue-500/30",
-    overlay: "from-blue-900/30",
+    badge: "bg-blue-100 text-blue-800 border-blue-300",
+    accent: "from-blue-600 to-blue-500",
+    light: "bg-blue-50/50",
+    border: "border-blue-200",
+    imageBg: "bg-gradient-to-br from-blue-100 to-blue-50"
   },
   pink: {
-    ring: "group-hover:ring-pink-400/50",
-    shadow: "group-hover:shadow-pink-500/30",
-    overlay: "from-pink-900/30",
+    badge: "bg-pink-100 text-pink-800 border-pink-300",
+    accent: "from-pink-600 to-pink-500",
+    light: "bg-pink-50/50",
+    border: "border-pink-200",
+    imageBg: "bg-gradient-to-br from-pink-100 to-pink-50"
   },
   amber: {
-    ring: "group-hover:ring-amber-400/50",
-    shadow: "group-hover:shadow-amber-600/30",
-    overlay: "from-amber-900/30",
+    badge: "bg-amber-100 text-amber-800 border-amber-300",
+    accent: "from-amber-600 to-amber-500",
+    light: "bg-amber-50/50",
+    border: "border-amber-200",
+    imageBg: "bg-gradient-to-br from-amber-100 to-amber-50"
   },
 };
 
@@ -80,7 +93,24 @@ const imageThemes: Record<ThemeKey, { ring: string; shadow: string; overlay: str
   };
 
   const project = projectdata[current];
-  const imgTheme = imageThemes[project.theme];
+  const theme = projectThemes[project.theme];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6 },
+    },
+  };
 
   return (
     <section
@@ -94,66 +124,92 @@ const imageThemes: Record<ThemeKey, { ring: string; shadow: string; overlay: str
         style={{ animationDelay: "2s" }}
       ></div>
 
-      <div className="max-w-6xl mx-auto relative z-10">
-        <h1 className="text-5xl md:text-6xl font-bold text-center bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent mb-12 animate-glow-pulse">
+      <motion.div className="max-w-6xl mx-auto relative z-10">
+        <motion.h1 
+          className="text-5xl md:text-6xl font-bold text-center bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent mb-12 font-outfit"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
           My Projects
-        </h1>
+        </motion.h1>
 
-        <div className="grid md:grid-cols-2 gap-8 items-center bg-white/80 backdrop-blur-md rounded-3xl shadow-2xl border border-emerald-100 p-6 sm:p-8 md:p-12 animate-slideInUp hover:shadow-3xl hover:shadow-emerald-300/50 transition-all duration-300 hover:border-emerald-300">
-          {/* Left */}
-          <div className="space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold text-emerald-900 leading-tight">
-              {project.name}
-            </h2>
+        <motion.div 
+          className={`grid md:grid-cols-2 gap-8 items-center rounded-3xl shadow-2xl p-6 sm:p-8 md:p-12 transition-all duration-300 ${theme.light} bg-white/70 backdrop-blur-md border ${theme.border}`}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          key={current}
+        >
+          {/* Left Section */}
+          <motion.div className="space-y-6" variants={containerVariants} initial="hidden" animate="visible">
+            <motion.div variants={itemVariants}>
+              <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold mb-2 ${theme.badge} font-poppins`}>
+                Project {current + 1} of {projectdata.length}
+              </span>
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight font-outfit">
+                {project.name}
+              </h2>
+            </motion.div>
 
-            <p className="text-gray-700 leading-relaxed text-lg">
+            <motion.p className="text-gray-700 leading-relaxed text-lg font-poppins" variants={itemVariants}>
               {project.descp}
-            </p>
+            </motion.p>
 
             {/* Skills */}
-            <div className="flex flex-wrap gap-3 pt-4">
-              {project.skills.split(",").map((skill, index) => (
-                <span
-                  key={index}
-                  className="group relative bg-gradient-to-r from-emerald-100 to-emerald-50 text-emerald-800 px-4 py-2 rounded-full font-semibold text-sm border border-emerald-200 hover:border-emerald-400 transition-all duration-300 hover:shadow-md hover:shadow-emerald-300/50 hover:scale-105 hover:-translate-y-1 cursor-default animate-bounce-in"
-                  style={{ animationDelay: `${index * 0.05}s` }}
+            <motion.div className="flex flex-wrap gap-3" variants={containerVariants} initial="hidden" animate="visible">
+              {project.skills.split(",").map((skill) => (
+                <motion.span
+                  key={skill}
+                  className="bg-white border border-emerald-200 text-emerald-700 px-4 py-2 rounded-full font-semibold text-sm hover:border-emerald-400 hover:bg-emerald-50 transition-all duration-300 font-poppins"
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.05, y: -2 }}
                 >
                   {skill.trim()}
-                </span>
+                </motion.span>
               ))}
-            </div>
+            </motion.div>
 
             {/* Links */}
-            <div className="flex flex-wrap gap-4 pt-6">
-              
-               <a href={project.github}
+            <motion.div className="flex flex-wrap gap-4 pt-2" variants={containerVariants} initial="hidden" animate="visible">
+              <motion.a 
+                href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-emerald-500 text-white px-6 py-3 rounded-full font-semibold hover:from-emerald-700 hover:to-emerald-600 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-400/50 hover:scale-105"
+                className={`group flex items-center gap-2 bg-gradient-to-r ${theme.accent} text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg font-poppins`}
+                variants={itemVariants}
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <Github size={20} className="transition-transform group-hover:scale-110" />
+                <Github size={20} className="group-hover:rotate-12 transition-transform" />
                 GitHub
-              </a>
+              </motion.a>
 
               {project.LiveDemo && (
-                
-                 <a href={project.LiveDemo}
+                <motion.a
+                  href={project.LiveDemo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-2 border-2 border-emerald-600 text-emerald-600 px-6 py-3 rounded-full font-semibold hover:bg-emerald-600 hover:text-white transition-all duration-300 hover:shadow-lg hover:shadow-emerald-400/50 hover:scale-105 overflow-hidden relative"
+                  className={`group flex items-center gap-2 border-2 bg-white ${theme.border} text-gray-900 px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:shadow-lg font-poppins`}
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  <span className="absolute inset-0 bg-emerald-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left -z-10"></span>
-                  <ExternalLink size={20} className="transition-transform group-hover:scale-110" />
+                  <ExternalLink size={20} className="group-hover:translate-x-1 transition-transform" />
                   Live Demo
-                </a>
+                </motion.a>
               )}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          {/* Right — square, rounded, color effect only on hover */}
-          <div className="flex justify-center group">
-            <div
-              className={`relative aspect-square w-full max-w-sm rounded-[2rem] overflow-hidden ring-4 ring-transparent shadow-2xl shadow-black/10 transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-2 ${imgTheme.ring} ${imgTheme.shadow}`}
+          {/* Right - Image Section */}
+          <motion.div className="flex justify-center">
+            <motion.div
+              className={`relative aspect-square w-full max-w-sm rounded-2xl overflow-hidden shadow-xl border-2 ${theme.border} ${theme.imageBg}`}
+              whileHover={{ scale: 1.05, y: -8 }}
+              transition={{ type: "spring", stiffness: 300 }}
             >
               <Image
                 src={project.img}
@@ -162,36 +218,53 @@ const imageThemes: Record<ThemeKey, { ring: string; shadow: string; overlay: str
                 height={600}
                 className="w-full h-full object-cover"
               />
-              <div
-                className={`absolute inset-0 bg-gradient-to-t ${imgTheme.overlay} via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
-              ></div>
-            </div>
-          </div>
-        </div>
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"
+                initial={{ opacity: 0 }}
+                whileHover={{ opacity: 1 }}
+              />
+            </motion.div>
+          </motion.div>
+        </motion.div>
 
         {/* Navigation */}
-        <div className="flex justify-between items-center mt-8 gap-4 flex-wrap">
-          <button
+        <motion.div 
+          className="flex justify-between items-center mt-12 gap-4 flex-wrap"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <motion.button
             onClick={prevProject}
             disabled={current === 0}
-            className="group relative w-14 h-14 rounded-full bg-gradient-to-br from-emerald-600 to-emerald-500 text-white flex items-center justify-center hover:from-emerald-700 hover:to-emerald-600 transition-all duration-300 disabled:from-gray-400 disabled:to-gray-300 disabled:cursor-not-allowed hover:shadow-lg hover:shadow-emerald-400/50 hover:scale-110"
+            className="group relative w-14 h-14 rounded-full bg-gradient-to-br from-emerald-600 to-emerald-500 text-white flex items-center justify-center hover:from-emerald-700 hover:to-emerald-600 transition-all duration-300 disabled:from-gray-400 disabled:to-gray-300 disabled:cursor-not-allowed shadow-lg disabled:shadow-none font-poppins"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
           >
             <ChevronLeft className="transition-transform group-hover:-translate-x-1 group-disabled:opacity-50" size={24} />
-          </button>
+          </motion.button>
 
-          <p className="text-2xl font-bold text-emerald-700 bg-white/50 px-6 py-2 rounded-full">
+          <motion.p 
+            className="text-2xl font-bold text-emerald-700 bg-white/60 backdrop-blur px-6 py-2 rounded-full font-poppins"
+            animate={{ scale: [1, 1.05, 1] }}
+            transition={{ duration: 0.5 }}
+            key={current}
+          >
             {current + 1} <span className="text-gray-500">/</span> {projectdata.length}
-          </p>
+          </motion.p>
 
-          <button
+          <motion.button
             onClick={nextProject}
             disabled={current === projectdata.length - 1}
-            className="group relative w-14 h-14 rounded-full bg-gradient-to-br from-emerald-600 to-emerald-500 text-white flex items-center justify-center hover:from-emerald-700 hover:to-emerald-600 transition-all duration-300 disabled:from-gray-400 disabled:to-gray-300 disabled:cursor-not-allowed hover:shadow-lg hover:shadow-emerald-400/50 hover:scale-110"
+            className="group relative w-14 h-14 rounded-full bg-gradient-to-br from-emerald-600 to-emerald-500 text-white flex items-center justify-center hover:from-emerald-700 hover:to-emerald-600 transition-all duration-300 disabled:from-gray-400 disabled:to-gray-300 disabled:cursor-not-allowed shadow-lg disabled:shadow-none font-poppins"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
           >
             <ChevronRight className="transition-transform group-hover:translate-x-1 group-disabled:opacity-50" size={24} />
-          </button>
-        </div>
-      </div>
+          </motion.button>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
