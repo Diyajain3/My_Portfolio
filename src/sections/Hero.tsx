@@ -2,137 +2,28 @@
 
 import Image from "next/image";
 import diya from "@/images/diyaaa.jpg";
-import { Github, Linkedin, FileText, Mail } from "lucide-react";
+import { ArrowUpRight, Github, Linkedin, Mail, MapPin } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section
-      id="hero"
-      className="relative min-h-screen flex items-center bg-gradient-to-br from-emerald-50 via-white to-emerald-100 overflow-hidden"
-    >
-      {/* Animated background elements */}
-      <div className="absolute top-10 right-20 w-72 h-72 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
-      <div
-        className="absolute -bottom-8 left-10 w-72 h-72 bg-emerald-300 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"
-        style={{ animationDelay: "2s" }}
-      ></div>
-
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-12 grid md:grid-cols-2 gap-6 md:gap-12 items-center relative z-10 pt-24 pb-12 md:py-16 lg:py-0">
-        {/* Left Section - Image */}
-        <div className="flex justify-center order-2 md:order-1">
-          <div className="photo-frame">
-            <Image
-              src={diya}
-              alt="Diya Jain"
-              fill
-              className="photo object-cover"
-              priority
-            />
+    <section id="hero" className="grid-bg relative overflow-hidden px-6 pb-24 pt-28 md:px-12 lg:px-20 lg:pb-32 lg:pt-36">
+      <div className="pointer-events-none absolute -right-32 top-16 h-96 w-96 rounded-full bg-[#c8f169]/10 blur-3xl" />
+      <div className="mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-[1.15fr_.85fr]">
+        <div>
+          <div className="animate-rise mono mb-7 flex items-center gap-3 text-sm text-[#c8f169]"><span className="h-px w-10 bg-[#c8f169]" /> AVAILABLE FOR OPPORTUNITIES</div>
+          <h1 className="animate-rise delay-1 max-w-4xl text-6xl font-semibold leading-[.95] tracking-[-.07em] text-[#f4f3ee] sm:text-7xl lg:text-[7.6rem]">Building useful<br /><span className="text-[#c8f169]">things for web.</span></h1>
+          <p className="animate-rise delay-2 mt-8 max-w-xl text-lg leading-relaxed text-[#9b9b94]">I&apos;m <strong className="font-medium text-[#f4f3ee]">Diya Jain</strong>, a full-stack developer who turns thoughtful ideas into fast, responsive products with React, Node.js and data that works.</p>
+          <div className="animate-rise delay-3 mt-9 flex flex-wrap items-center gap-4">
+            <a href="#projects" className="inline-flex items-center gap-2 bg-[#c8f169] px-5 py-3 font-semibold text-[#0d0e0c] transition hover:bg-white">View my work <ArrowUpRight size={18} /></a>
+            <a href="https://blobs.vusercontent.net/blob/DiyaJainResume-QX49c8LpEVc0iPoi5y9g4dxYXEdc81.pdf" target="_blank" rel="noreferrer" className="mono text-sm text-[#9b9b94] underline decoration-[#c8f169] underline-offset-4 transition hover:text-[#c8f169]">Download résumé</a>
           </div>
+          <div className="mono mt-16 flex flex-wrap gap-6 text-xs text-[#70716b]"><span className="flex items-center gap-2"><MapPin size={14} className="text-[#c8f169]" /> Greater Noida, India</span><span>CGPA 8.7 / 2027</span><span>600+ DSA problems</span></div>
         </div>
-
-        {/* Right Section - Content */}
-        <div className="space-y-3 md:space-y-4 order-1 md:order-2">
-          <p
-            className="text-emerald-600 text-base sm:text-lg font-semibold animate-slideInDown opacity-0"
-            style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}
-          >
-            Hello, I&apos;m
-          </p>
-
-          <h1
-            className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-emerald-900 animate-slideInDown opacity-0 leading-tight"
-            style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}
-          >
-            Diya Jain
-          </h1>
-
-          <h2
-            className="text-xl sm:text-2xl md:text-3xl text-emerald-600 font-bold animate-slideInDown opacity-0"
-            style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}
-          >
-            Full Stack MERN Developer
-          </h2>
-
-          <p
-            className="text-gray-700 leading-relaxed text-sm sm:text-base md:text-lg animate-slideInDown opacity-0"
-            style={{ animationDelay: "0.5s", animationFillMode: "forwards" }}
-          >
-            I am a passionate Full Stack MERN Developer with experience in
-            building scalable and responsive web applications. I enjoy solving
-            Data Structures & Algorithms problems and continuously improving my
-            development skills by building real-world projects.
-          </p>
-
-          {/* Social Icons */}
-          <div
-            className="flex gap-3 sm:gap-4 pt-3 sm:pt-4 animate-slideInDown opacity-0"
-            style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}
-          >
-            <a
-              href="https://github.com/Diyajain3"
-              target="_blank" //opens the link in a new browser tab
-              rel="noopener noreferrer"
-              className="group relative bg-emerald-600 p-2 sm:p-3 rounded-full text-white hover:bg-emerald-700 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-emerald-400/50"
-            >
-              <Github size={18} className="sm:hidden" />
-              <Github size={22} className="hidden sm:block" />
-              <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-emerald-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                GitHub
-              </span>
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/diya30jain/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative bg-emerald-600 p-2 sm:p-3 rounded-full text-white hover:bg-emerald-700 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-emerald-400/50"
-            >
-              <Linkedin size={18} className="sm:hidden" />
-              <Linkedin size={22} className="hidden sm:block" />
-              <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-emerald-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                LinkedIn
-              </span>
-            </a>
-
-            <a
-              href="https://drive.google.com/file/d/18xJDvmKCIYnMFQ8UDu0qaTIf_3FFQTLQ/view"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative bg-emerald-600 p-2 sm:p-3 rounded-full text-white hover:bg-emerald-700 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-emerald-400/50"
-            >
-              <FileText size={18} className="sm:hidden" />
-              <FileText size={22} className="hidden sm:block" />
-              <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-emerald-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                Resume
-              </span>
-            </a>
-          </div>
-
-          {/* Buttons */}
-          <div
-            className="flex flex-wrap gap-3 sm:gap-4 pt-4 sm:pt-6 animate-slideInDown opacity-0"
-            style={{ animationDelay: "0.7s", animationFillMode: "forwards" }}
-          >
-            <a
-              href="https://drive.google.com/file/d/18xJDvmKCIYnMFQ8UDu0qaTIf_3FFQTLQ/view"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative bg-gradient-to-r from-emerald-600 to-emerald-500 text-white px-4 sm:px-8 py-2.5 sm:py-3 rounded-full text-sm sm:text-base font-semibold hover:from-emerald-700 hover:to-emerald-600 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-400/50 hover:scale-105 overflow-hidden"
-            >
-              <span className="relative z-10">Download Resume</span>
-            </a>
-
-            <a
-              href="#contact"
-              className="group relative border-2 border-emerald-600 text-emerald-600 px-4 sm:px-8 py-2.5 sm:py-3 rounded-full text-sm sm:text-base font-semibold hover:bg-emerald-600 hover:text-white transition-all duration-300 hover:shadow-lg hover:shadow-emerald-400/50 hover:scale-105 flex items-center gap-2 overflow-hidden"
-            >
-              <span className="absolute inset-0 bg-emerald-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-              <Mail size={16} className="sm:hidden relative z-10" />
-              <Mail size={18} className="hidden sm:block relative z-10" />
-              <span className="relative z-10">Contact Me</span>
-            </a>
-          </div>
+        <div className="relative mx-auto w-full max-w-sm lg:ml-auto">
+          <div className="absolute -inset-3 rounded-full border border-dashed border-[#c8f169]/30" />
+          <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] grayscale transition duration-500 hover:grayscale-0"><Image src={diya} alt="Diya Jain" fill className="object-cover" priority /></div>
+          <div className="absolute -bottom-6 -left-7 border border-[#2b2d28] bg-[#151614] p-4"><span className="mono block text-[10px] text-[#70716b]">CURRENTLY</span><span className="mt-1 block text-sm text-[#f4f3ee]">Shipping full-stack ideas ↗</span></div>
+          <div className="absolute -right-5 top-8 flex flex-col gap-3"><a aria-label="GitHub" href="https://github.com/Diyajain3" target="_blank" rel="noreferrer" className="rounded-full border border-[#2b2d28] bg-[#151614] p-3 text-[#f4f3ee] transition hover:border-[#c8f169] hover:text-[#c8f169]"><Github size={18} /></a><a aria-label="LinkedIn" href="https://linkedin.com/in/diya30jain" target="_blank" rel="noreferrer" className="rounded-full border border-[#2b2d28] bg-[#151614] p-3 text-[#f4f3ee] transition hover:border-[#c8f169] hover:text-[#c8f169]"><Linkedin size={18} /></a><a aria-label="Email Diya" href="mailto:diyajain3003@gmail.com" className="rounded-full border border-[#2b2d28] bg-[#151614] p-3 text-[#f4f3ee] transition hover:border-[#c8f169] hover:text-[#c8f169]"><Mail size={18} /></a></div>
         </div>
       </div>
     </section>

@@ -1,88 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { Menu, X } from "lucide-react";
 
-const navLinks = [
-  { name: "Home", href: "#hero" },
-  { name: "Education", href: "#education" },
-  { name: "Skills", href: "#skills" },
-  { name: "Services", href: "#services" },
-   { name: "Projects", href: "#projects" },
-  { name: "Profiles", href: "#profile" },
-  { name: "Experience", href: "#experience" },
-  { name: "Contact", href: "#contact" }
-];
+const navLinks = [{ name: "About", href: "#profile" }, { name: "Skills", href: "#skills" }, { name: "Work", href: "#projects" }, { name: "Experience", href: "#experience" }, { name: "Contact", href: "#contact" }];
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const handleLinkClick = () => {
-    setIsMenuOpen(false);
-  };
-
-  return (
-    <nav className="sticky top-0 z-50 bg-white/70 backdrop-blur-xl border-b-2 border-emerald-100 shadow-lg">
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div className="flex items-center justify-between h-20">
-          
-          {/* Logo with glow */}
-          <h1 className="text-2xl font-extrabold text-emerald-900 relative group cursor-pointer">
-            <a href="#hero" className="flex items-center gap-2">
-              <span className="bg-gradient-to-r from-emerald-600 to-emerald-500 bg-clip-text text-transparent">Diya&apos;s Portfolio</span>
-              <span className="absolute -inset-2 blur-xl opacity-30 bg-gradient-to-r from-emerald-400 to-emerald-300 rounded-full -z-10 group-hover:opacity-50 transition-opacity duration-300"></span>
-            </a>
-          </h1>
-
-          {/* Desktop Menu */}
-          <ul className="hidden lg:flex gap-6 lg:gap-8 items-center">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  className="text-emerald-900 font-semibold hover:text-emerald-600 transition-all duration-300 relative group text-xs lg:text-sm uppercase tracking-wide"
-                >
-                  {link.name}
-                  <span className="absolute left-0 -bottom-2 w-0 h-1 bg-gradient-to-r from-emerald-600 to-emerald-500 group-hover:w-full transition-all duration-500 rounded-full"></span>
-                </a>
-              </li>
-            ))}
-          </ul>
-
-
-
-          {/* Mobile menu button */}
-          <button 
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden group text-emerald-800 text-3xl font-bold hover:text-emerald-600 transition-colors duration-300 p-2"
-            aria-label="Toggle mobile menu"
-            aria-expanded={isMenuOpen}
-          >
-            {isMenuOpen ? '✕' : '☰'}
-          </button>
-
-        </div>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="lg:hidden bg-white/90 backdrop-blur-lg border-t border-emerald-100 animate-in fade-in slide-in-from-top-2">
-            <ul className="flex flex-col gap-0 py-4">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    onClick={handleLinkClick}
-                    className="block px-6 py-3 text-emerald-900 font-semibold hover:bg-emerald-50 hover:text-emerald-600 transition-all duration-300 text-sm uppercase tracking-wide border-l-4 border-l-transparent hover:border-l-emerald-600"
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-      </div>
-    </nav>
-  );
+  return <nav className="sticky top-0 z-50 border-b border-[#2b2d28] bg-[#0d0e0c]/95 backdrop-blur-xl"><div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 md:px-12 lg:px-20"><a href="#hero" className="flex items-center gap-3 text-lg font-semibold tracking-tight text-[#f4f3ee]"><span className="flex h-10 w-10 items-center justify-center rounded-[14px] bg-[#c8f169] font-serif text-xl italic text-[#0d0e0c]">D</span> Diya Jain</a><div className="hidden items-center gap-8 md:flex">{navLinks.map((link) => <a key={link.href} href={link.href} className="text-sm font-medium text-[#9b9b94] transition hover:text-[#c8f169]">{link.name}</a>)}<a href="#contact" className="rounded-full bg-[#c8f169] px-5 py-2.5 text-sm font-semibold text-[#0d0e0c] transition hover:bg-[#f4f3ee]">Let&apos;s talk <span aria-hidden="true">→</span></a></div><button className="text-[#c8f169] md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle navigation">{isMenuOpen ? <X /> : <Menu />}</button></div>{isMenuOpen && <div className="border-t border-[#2b2d28] bg-[#0d0e0c] px-6 py-5 md:hidden">{navLinks.map((link) => <a key={link.href} href={link.href} onClick={() => setIsMenuOpen(false)} className="block py-3 text-sm font-medium text-[#9b9b94]">{link.name}</a>)}</div>}</nav>;
 }

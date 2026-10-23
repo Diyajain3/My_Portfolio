@@ -6,22 +6,12 @@ import { ExternalLink, GitCommit } from "lucide-react";
 export default function Experience() {
   const expdata = [
     {
-      companyname: "CodeAlpha",
-      role: "Frontend Development Intern",
-      issueDate: "10 Sep 2025",
-      finishDate: "10 Oct 2025",
-      WhatIDid:
-        "Actively participated in CodeAlpha's internship program, working on frontend development tasks involving HTML, CSS, and JavaScript. Built and refined UI components, focused on responsive layouts, and improved my understanding of structuring and styling web pages efficiently. Completed all assigned tasks with dedication and consistency.",
-      certificateLink:
-        "https://drive.google.com/file/d/1GvXfzeMol0LoSl3ehnog23mCac_233Gq/view?usp=drive_link",
-    },
-    {
       companyname: "Codec Technologies Pvt. Ltd.",
       role: "MERN Stack Developer Intern",
-      issueDate: "15 Sep 2025",
-      finishDate: "15 Oct 2025",
+      issueDate: "Sep 2025",
+      finishDate: "Oct 2025",
       WhatIDid:
-        "Completed a 1-month AICTE & ICAC approved internship as a MERN Stack Developer Intern. Worked on building full-stack web applications using MongoDB, Express.js, React, and Node.js. Gained hands-on experience in developing REST APIs, connecting frontend components to backend services, managing databases, and deploying functional web features as part of real-world development tasks.",
+        "Completed an AICTE and ICAC-approved MERN Stack internship through the National Internship Portal, building full-stack features across the frontend and backend. Worked on RESTful API design, database integration, and reusable UI components under real-world deadlines and code-review standards.",
       certificateLink:
         "https://drive.google.com/file/d/1ndZYr1q52SQEWABePPxCJNZDNxoZlxtD/view?usp=drive_link",
     },
@@ -53,7 +43,7 @@ export default function Experience() {
   }, []);
 
   return (
-    <section className="relative bg-gradient-to-b from-white via-emerald-50 to-emerald-100 py-24 px-6 overflow-hidden">
+    <section className="relative overflow-hidden bg-[#151614] px-6 py-24 text-[#f4f3ee]">
       {/* Decorative elements */}
       <div className="absolute top-40 left-20 w-96 h-96 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-8 animate-pulse"></div>
       <div className="absolute -bottom-20 right-20 w-96 h-96 bg-emerald-300 rounded-full mix-blend-multiply filter blur-3xl opacity-8 animate-pulse" style={{ animationDelay: '2s' }}></div>
@@ -64,7 +54,7 @@ export default function Experience() {
           <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent mb-4 animate-slideInDown">
             Experience
           </h2>
-          <p className="text-gray-700 text-lg">
+          <p className="text-[#c5c9bf] text-lg">
             Professional development experience and internships
           </p>
         </div>
@@ -92,10 +82,10 @@ export default function Experience() {
                 </div>
 
                 {/* Card */}
-                <div className="group rounded-2xl p-6 md:p-8 border-2 border-emerald-200 bg-white/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-emerald-400 hover:shadow-lg hover:shadow-emerald-200/50">
+                <div className="group rounded-2xl p-6 md:p-8 border border-[#2b2d28] bg-[#20221e] backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-emerald-400 hover:shadow-lg hover:shadow-emerald-200/50">
                   {/* Top bar */}
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600">
+                    <span className="text-xs font-semibold uppercase tracking-wider text-[#d7f77a]">
                       Internship {String(i + 1).padStart(2, "0")}
                     </span>
                     <span className="text-xs text-gray-600 font-medium">
@@ -103,13 +93,13 @@ export default function Experience() {
                     </span>
                   </div>
 
-                  <h3 className="text-2xl font-bold mb-2 text-emerald-900 group-hover:text-emerald-700 transition-colors">
+                  <h3 className="text-2xl font-bold mb-2 text-[#f4f3ee] group-hover:text-emerald-700 transition-colors">
                     {exp.companyname}
                   </h3>
 
-                  <p className="text-base mb-4 text-emerald-600 font-semibold">{exp.role}</p>
+                  <p className="text-base mb-4 text-[#d7f77a] font-semibold">{exp.role}</p>
 
-                  <p className="text-sm leading-relaxed mb-6 text-gray-700">
+                  <p className="text-sm leading-relaxed mb-6 text-[#c5c9bf]">
                     {exp.WhatIDid}
                   </p>
 
@@ -117,7 +107,7 @@ export default function Experience() {
                     href={exp.certificateLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-semibold px-5 py-2.5 rounded-lg border-2 border-emerald-600 text-emerald-600 hover:bg-emerald-600 hover:text-white transition-all duration-300 hover:shadow-md hover:shadow-emerald-200"
+                    className="inline-flex items-center gap-2 text-sm font-semibold px-5 py-2.5 rounded-lg border-2 border-emerald-600 text-[#d7f77a] hover:bg-emerald-600 hover:text-white transition-all duration-300 hover:shadow-md hover:shadow-emerald-200"
                   >
                     View Certificate
                     <ExternalLink size={16} />
