@@ -55,7 +55,7 @@ export default function Service() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="relative bg-gradient-to-b from-emerald-50 via-white to-emerald-50 px-6 py-20 md:px-12 lg:px-20 overflow-hidden">
+    <section className="relative overflow-hidden bg-[#0d0e0c] px-6 py-24 text-[#f4f3ee] md:px-12 lg:px-20">
 
       {/* Decorative elements */}
       <div className="absolute top-20 left-10 w-96 h-96 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-8 animate-pulse"></div>
@@ -84,7 +84,7 @@ export default function Service() {
             return (
               <div
                 key={index}
-                className="group relative overflow-hidden rounded-2xl border border-emerald-200 bg-white/80 backdrop-blur-sm p-6 sm:p-8 shadow-lg transition-all duration-500 hover:-translate-y-4 hover:border-emerald-400 hover:shadow-2xl hover:shadow-emerald-200/50"
+                className="group relative overflow-hidden rounded-2xl border border-[#2b2d28] bg-[#20221e] backdrop-blur-sm p-6 sm:p-8 shadow-lg transition-all duration-500 hover:-translate-y-4 hover:border-emerald-400 hover:shadow-2xl hover:shadow-emerald-200/50"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
 
@@ -107,7 +107,7 @@ export default function Service() {
                 </div>
 
                 {/* Title */}
-                <h2 className="relative z-10 mt-6 text-2xl font-bold text-emerald-900 group-hover:text-emerald-700 transition-colors duration-300">
+                <h2 className="relative z-10 mt-6 text-2xl font-bold text-[#f4f3ee] group-hover:text-emerald-700 transition-colors duration-300">
                   {service.serviceName}
                 </h2>
 
@@ -120,7 +120,7 @@ export default function Service() {
                   <div className="relative z-10 mt-8 space-y-6 animate-slideInUp">
 
                     <div>
-                      <h3 className="text-lg font-semibold text-emerald-900">
+                      <h3 className="text-lg font-semibold text-[#f4f3ee]">
                         Skills Used
                       </h3>
 
@@ -130,7 +130,7 @@ export default function Service() {
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-semibold text-emerald-900">
+                      <h3 className="text-lg font-semibold text-[#f4f3ee]">
                         What You Get
                       </h3>
 

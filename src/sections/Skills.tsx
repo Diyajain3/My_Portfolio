@@ -49,7 +49,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative bg-gradient-to-b from-white to-emerald-50 py-16 px-6 overflow-hidden"
+      className="relative overflow-hidden bg-[#151614] px-6 py-24 text-[#f4f3ee]"
     >
       {/* Soft background glow */}
       <div className="absolute top-10 -left-24 w-80 h-80 bg-emerald-300/10 rounded-full blur-3xl" />
@@ -64,7 +64,7 @@ export default function Skills() {
               MY TECH STACK
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-emerald-900 mb-3">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-[#f4f3ee] mb-3">
             Skills &amp; Technologies
           </h2>
           <p className="text-base text-gray-600 max-w-2xl mx-auto leading-relaxed">
@@ -78,7 +78,7 @@ export default function Skills() {
           {skills.map(({ name, icon: Icon, color }) => (
             <div
               key={name}
-              className="group flex flex-col items-center justify-center gap-3 rounded-2xl bg-white border border-emerald-100 p-3 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-emerald-300"
+              className="group flex flex-col items-center justify-center gap-3 rounded-2xl bg-[#20221e] border border-[#2b2d28] p-3 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-emerald-300"
             >
               <div
                 className="flex items-center justify-center w-14 h-14 rounded-2xl transition-transform duration-300 group-hover:scale-110"

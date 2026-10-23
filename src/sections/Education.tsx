@@ -53,8 +53,8 @@ const y = useTransform(smoothProgress, [0, 1], [0, Math.max(0, timelineHeight - 
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-b from-white via-emerald-50 to-emerald-100 overflow-hidden">
-      <h1 className="text-5xl md:text-6xl font-bold text-center bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent mb-12">
+    <section className="relative overflow-hidden bg-[#0d0e0c] px-6 py-24 text-[#f4f3ee]">
+      <h1 className="text-5xl md:text-6xl font-bold text-center text-[#c8f169] mb-12">
         Education
       </h1>
 
@@ -69,7 +69,7 @@ const y = useTransform(smoothProgress, [0, 1], [0, Math.max(0, timelineHeight - 
           <div className="timeline-item" key={index}>
             <div className="dot"></div>
 
-            <div className="edu-card">
+            <div className="edu-card rounded-2xl border border-[#2b2d28] bg-[#20221e] p-6 shadow-xl">
               <h2>{d.course}</h2>
               <h3>{d.address}</h3>
 

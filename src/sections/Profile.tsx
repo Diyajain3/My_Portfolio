@@ -250,7 +250,7 @@ const DifficultyRing: React.FC<DifficultyRingProps> = ({
                     />
                 </svg>
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <span className="text-sm font-bold text-gray-800 font-Outfit">{solved}</span>
+                    <span className="text-sm font-bold text-[#f4f3ee] font-Outfit">{solved}</span>
                 </div>
             </div>
             <div>
@@ -328,7 +328,7 @@ const Profile: React.FC = () => {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
             id="leetcode"
-            className="w-full px-4 sm:px-6 md:px-12 py-12 md:py-16 scroll-mt-20 bg-gradient-to-b from-white via-emerald-50 to-emerald-100 overflow-hidden"
+            className="w-full px-4 sm:px-6 md:px-12 py-12 md:py-16 scroll-mt-20 bg-[#151614] overflow-hidden"
         >
             <motion.h4
                 initial={{ y: -15, opacity: 0 }}
@@ -366,7 +366,7 @@ const Profile: React.FC = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.35, duration: 0.4 }}
                     viewport={{ once: true }}
-                    className="rounded-2xl p-5 sm:p-6 mb-4 bg-white/80 backdrop-blur-sm border border-emerald-200 shadow-md"
+                    className="rounded-2xl p-5 sm:p-6 mb-4 bg-[#20221e] backdrop-blur-sm border border-[#2b2d28] shadow-xl"
                 >
                     <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
                         <div className="flex flex-wrap items-center justify-center sm:justify-start gap-5 sm:gap-6">
@@ -410,14 +410,14 @@ const Profile: React.FC = () => {
                                 { label: 'Active Days', val: activeDays },
                             ].map((s) => (
                                 <div key={s.label} ref={s.val.ref} className="text-center">
-                                    <div className="text-lg sm:text-xl font-bold text-gray-800 font-Outfit">
+                                    <div className="text-lg sm:text-xl font-bold text-[#f4f3ee] font-Outfit">
                                         {loading ? '—' : s.val.count}
                                     </div>
                                     <div className="text-[10px] text-gray-500 font-Ovo">{s.label}</div>
                                 </div>
                             ))}
                             <div ref={maxStreak.ref} className="text-center">
-                                <div className="text-lg sm:text-xl font-bold text-gray-800 font-Outfit flex items-center justify-center gap-1">
+                                <div className="text-lg sm:text-xl font-bold text-[#f4f3ee] font-Outfit flex items-center justify-center gap-1">
                                     {loading ? '—' : maxStreak.count}
                                     <motion.span
                                         animate={prefersReducedMotion ? {} : { scale: [1, 1.2, 1] }}
@@ -437,12 +437,12 @@ const Profile: React.FC = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.45, duration: 0.4 }}
                     viewport={{ once: true }}
-                    className="rounded-2xl p-5 sm:p-6 bg-white/80 backdrop-blur-sm border border-emerald-200 shadow-md"
+                    className="rounded-2xl p-5 sm:p-6 bg-[#20221e] backdrop-blur-sm border border-[#2b2d28] shadow-xl"
                 >
                     <div ref={heatmapScrollRef} className="w-full overflow-x-auto heatmap-scroll">
                         <div className="flex items-center mb-2">
                             <h3 className="text-xs font-semibold text-gray-500 font-Outfit">
-                                <span className="text-base font-bold text-gray-800">
+                                <span className="text-base font-bold text-[#f4f3ee]">
                                     {loading ? '—' : stats.totalSubmissions}
                                 </span>{' '}
                                 submissions in the past year

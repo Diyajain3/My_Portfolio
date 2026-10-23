@@ -43,7 +43,7 @@ export default function Experience() {
   }, []);
 
   return (
-    <section className="relative bg-gradient-to-b from-white via-emerald-50 to-emerald-100 py-24 px-6 overflow-hidden">
+    <section className="relative overflow-hidden bg-[#151614] px-6 py-24 text-[#f4f3ee]">
       {/* Decorative elements */}
       <div className="absolute top-40 left-20 w-96 h-96 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-8 animate-pulse"></div>
       <div className="absolute -bottom-20 right-20 w-96 h-96 bg-emerald-300 rounded-full mix-blend-multiply filter blur-3xl opacity-8 animate-pulse" style={{ animationDelay: '2s' }}></div>
@@ -82,7 +82,7 @@ export default function Experience() {
                 </div>
 
                 {/* Card */}
-                <div className="group rounded-2xl p-6 md:p-8 border-2 border-emerald-200 bg-white/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-emerald-400 hover:shadow-lg hover:shadow-emerald-200/50">
+                <div className="group rounded-2xl p-6 md:p-8 border border-[#2b2d28] bg-[#20221e] backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-emerald-400 hover:shadow-lg hover:shadow-emerald-200/50">
                   {/* Top bar */}
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
                     <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600">
@@ -93,7 +93,7 @@ export default function Experience() {
                     </span>
                   </div>
 
-                  <h3 className="text-2xl font-bold mb-2 text-emerald-900 group-hover:text-emerald-700 transition-colors">
+                  <h3 className="text-2xl font-bold mb-2 text-[#f4f3ee] group-hover:text-emerald-700 transition-colors">
                     {exp.companyname}
                   </h3>
 

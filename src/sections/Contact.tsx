@@ -40,7 +40,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
   return (
     <section
       id="contact"
-      className="relative bg-gradient-to-b from-white via-emerald-50 to-emerald-100 py-16 md:py-24 px-4 sm:px-6 md:px-16 overflow-hidden"
+      className="relative overflow-hidden bg-[#0d0e0c] px-4 py-24 text-[#f4f3ee] sm:px-6 md:px-16"
     >
       {/* Decorative elements */}
       <div className="absolute top-20 left-10 w-96 h-96 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
@@ -60,9 +60,9 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
       <div className="grid lg:grid-cols-2 gap-6 max-w-7xl mx-auto relative z-10">
         {/* LEFT - Contact Info */}
 
-        <div className="group rounded-3xl bg-white/80 backdrop-blur-xl border border-emerald-200 shadow-xl hover:shadow-2xl hover:shadow-emerald-200/50 p-6 sm:p-8 md:p-10 transition-all duration-500 hover:-translate-y-2">
+        <div className="group rounded-3xl bg-[#20221e] backdrop-blur-xl border border-[#2b2d28] shadow-xl hover:shadow-2xl hover:shadow-emerald-200/50 p-6 sm:p-8 md:p-10 transition-all duration-500 hover:-translate-y-2">
 
-          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-emerald-900 mb-6 sm:mb-8 md:mb-10">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#f4f3ee] mb-6 sm:mb-8 md:mb-10">
             Diya Jain
           </h3>
 
@@ -76,7 +76,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
 
               <div>
                 <p className="text-sm text-gray-600 font-semibold">Email</p>
-                <p className="text-sm sm:text-base md:text-lg font-semibold text-emerald-900 group-hover/item:text-emerald-700 transition-colors break-all">
+                <p className="text-sm sm:text-base md:text-lg font-semibold text-[#f4f3ee] group-hover/item:text-emerald-700 transition-colors break-all">
                   diyajain3003@gmail.com
                 </p>
               </div>
@@ -90,7 +90,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
 
               <div>
                 <p className="text-sm text-gray-600 font-semibold">Phone</p>
-                <p className="text-sm sm:text-base md:text-lg font-semibold text-emerald-900 group-hover/item:text-emerald-700 transition-colors">
+                <p className="text-sm sm:text-base md:text-lg font-semibold text-[#f4f3ee] group-hover/item:text-emerald-700 transition-colors">
                   +91 7879963982
                 </p>
               </div>
@@ -104,7 +104,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
 
               <div>
                 <p className="text-sm text-gray-600 font-semibold">Location</p>
-                <p className="text-sm sm:text-base md:text-lg font-semibold text-emerald-900">
+                <p className="text-sm sm:text-base md:text-lg font-semibold text-[#f4f3ee]">
                   Greater Noida, Uttar Pradesh
                 </p>
               </div>
@@ -149,11 +149,11 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
       <form
   ref={form}
   onSubmit={sendEmail}
-  className="group rounded-3xl bg-white/80 backdrop-blur-xl border border-emerald-200 shadow-xl hover:shadow-2xl hover:shadow-emerald-200/50 p-6 sm:p-10 space-y-6 transition-all duration-500 hover:-translate-y-2"
+  className="group rounded-3xl bg-[#20221e] backdrop-blur-xl border border-[#2b2d28] shadow-xl hover:shadow-2xl hover:shadow-emerald-200/50 p-6 sm:p-10 space-y-6 transition-all duration-500 hover:-translate-y-2"
 >
 
           <div>
-            <label className="block text-sm font-semibold text-emerald-900 mb-2">Your Name</label>
+            <label className="block text-sm font-semibold text-[#f4f3ee] mb-2">Your Name</label>
             <input
   type="text"
   name="name"
@@ -164,7 +164,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-emerald-900 mb-2">Email Address</label>
+            <label className="block text-sm font-semibold text-[#f4f3ee] mb-2">Email Address</label>
             <input
   type="email"
   name="email"
@@ -175,7 +175,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-emerald-900 mb-2">Subject</label>
+            <label className="block text-sm font-semibold text-[#f4f3ee] mb-2">Subject</label>
            <input
   type="text"
   name="title"
@@ -186,7 +186,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-emerald-900 mb-2">Message</label>
+            <label className="block text-sm font-semibold text-[#f4f3ee] mb-2">Message</label>
             <textarea
   name="message"
   rows={5}
