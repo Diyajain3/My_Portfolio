@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root { --ink: #f4f3ee; --muted: #9b9b94; --lime: #c8f169; --panel: #151614; --line: #2b2d28; }
+:root { --ink: #f7f4ec; --muted: #a7aaa0; --lime: #d7f77a; --sage: #9fca76; --amber: #e9a15b; --panel: #181b17; --line: #30352d; }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin: 0; background: #0d0e0c; color: var(--ink); font-family: 'Space Grotesk', sans-serif; }
@@ -18,6 +18,9 @@ body { margin: 0; background: #0d0e0c; color: var(--ink); font-family: 'Space Gr
 .portfolio-section { border-top: 1px solid var(--line); }
 .grid-bg { background-image: linear-gradient(rgba(200,241,105,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(200,241,105,.04) 1px, transparent 1px); background-size: 48px 48px; }
 .project-card { background: var(--panel); border: 1px solid var(--line); transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease; }
-.project-card:hover { transform: translateY(-6px); border-color: rgba(200,241,105,.55); box-shadow: 0 20px 60px rgba(0,0,0,.28); }
+.project-card:hover { transform: translateY(-6px); border-color: rgba(215,247,122,.6); box-shadow: 0 20px 60px rgba(0,0,0,.32), 0 0 0 1px rgba(215,247,122,.08); }
+.section-kicker { color: var(--amber); font-family: 'DM Mono', monospace; letter-spacing: .16em; text-transform: uppercase; font-size: .72rem; }
+.soft-divider { border-color: var(--line); }
+
 
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; } }
