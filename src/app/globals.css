@@ -1,39 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root { --paper: #f7f2e9; --paper-strong: #fffdf9; --ink: #272321; --muted: #716962; --brown: #5a4336; --accent: #bf7629; --line: #dfd6ca; --soft: #efe6da; }
+:root { --ink: #f4f3ee; --muted: #9b9b94; --lime: #c8f169; --panel: #151614; --line: #2b2d28; }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; background: var(--paper); color: var(--ink); font-family: 'DM Sans', sans-serif; }
-::selection { background: #d99b58; color: #fffdf9; }
+body { margin: 0; background: #0d0e0c; color: var(--ink); font-family: 'Space Grotesk', sans-serif; }
+::selection { background: var(--lime); color: #0d0e0c; }
 .mono { font-family: 'DM Mono', monospace; }
 
-h1, h2, h3, h4, .font-Ovo { font-family: 'Playfair Display', Georgia, serif; letter-spacing: -.035em; }
-p, a, button, input, textarea, label, span { font-family: 'DM Sans', sans-serif; }
-
-section, footer { background: var(--paper) !important; color: var(--ink); }
-section[id] { border-top: 1px solid var(--line); }
-.bg-white, .bg-white\/80, .bg-white\/90 { background: var(--paper-strong) !important; }
-.bg-emerald-50, .bg-emerald-100, .bg-emerald-200, .bg-emerald-300 { background-color: var(--soft) !important; }
-.text-gray-500, .text-gray-600, .text-gray-700, .text-gray-800 { color: var(--muted) !important; }
-.text-emerald-900, .text-emerald-800, .text-emerald-700, .text-emerald-600, .text-emerald-500 { color: var(--brown) !important; }
-.border-emerald-100, .border-emerald-200, .border-emerald-300 { border-color: var(--line) !important; }
-.bg-gradient-to-b, .bg-gradient-to-br, .bg-gradient-to-r { background-image: none !important; }
-[class*="from-emerald"], [class*="to-emerald"] { background-color: transparent; }
-[class*="bg-emerald-6"], [class*="bg-emerald-5"] { background: var(--brown) !important; color: #fffdf9 !important; }
-[class*="hover:bg-emerald"]:hover { background: var(--accent) !important; }
-[class*="shadow-emerald"] { --tw-shadow-color: rgba(90,67,54,.18) !important; }
-input, textarea { background: #fbf8f3 !important; border: 1px solid var(--line) !important; color: var(--ink) !important; }
-input:focus, textarea:focus { border-color: var(--accent) !important; box-shadow: 0 0 0 3px rgba(191,118,41,.12); }
-button { transition: transform .25s ease, background-color .25s ease, border-color .25s ease; }
-button:hover { transform: translateY(-2px); }
+@keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes drift { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.animate-rise { animation: rise .8s ease forwards; opacity: 0; }
+.delay-1 { animation-delay: .12s; } .delay-2 { animation-delay: .24s; } .delay-3 { animation-delay: .36s; }
 
 .portfolio-section { border-top: 1px solid var(--line); }
-.grid-bg { background-image: linear-gradient(rgba(191,118,41,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(191,118,41,.06) 1px, transparent 1px); background-size: 48px 48px; }
-.project-card { background: var(--paper-strong); border: 1px solid var(--line); border-radius: 24px; transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease; }
-.project-card:hover { transform: translateY(-6px); border-color: rgba(191,118,41,.55); box-shadow: 0 20px 60px rgba(90,67,54,.14); }
-.timeline-item .edu-card { background: var(--paper-strong); border-color: var(--line); box-shadow: 0 16px 40px rgba(90,67,54,.08); }
+.grid-bg { background-image: linear-gradient(rgba(200,241,105,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(200,241,105,.04) 1px, transparent 1px); background-size: 48px 48px; }
+.project-card { background: var(--panel); border: 1px solid var(--line); transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease; }
+.project-card:hover { transform: translateY(-6px); border-color: rgba(200,241,105,.55); box-shadow: 0 20px 60px rgba(0,0,0,.28); }
 
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; } }
