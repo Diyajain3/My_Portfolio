@@ -48,7 +48,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
 
       {/* Heading */}
       <div className="text-center mb-10 md:mb-12 relative z-10">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent mb-4 animate-slideInDown">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#d7f77a] mb-4 animate-slideInDown">
           Get In Touch
         </h2>
 
@@ -60,7 +60,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
       <div className="grid lg:grid-cols-2 gap-6 max-w-7xl mx-auto relative z-10">
         {/* LEFT - Contact Info */}
 
-        <div className="group rounded-3xl bg-[#20221e] backdrop-blur-xl border border-[#2b2d28] shadow-xl hover:shadow-2xl hover:shadow-emerald-200/50 p-6 sm:p-8 md:p-10 transition-all duration-500 hover:-translate-y-2">
+        <div className="group rounded-3xl bg-[#20221e] border border-[#2b2d28] shadow-xl p-6 sm:p-8 md:p-10">
 
           <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#f4f3ee] mb-6 sm:mb-8 md:mb-10">
             Diya Jain
@@ -68,42 +68,42 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
 
           <div className="space-y-6 md:space-y-8">
 
-            <a href="mailto:diyajain3003@gmail.com" className="group/item flex gap-3 sm:gap-4 md:gap-5 p-3 md:p-4 rounded-2xl hover:bg-emerald-50 transition-all duration-300">
+            <a href="mailto:diyajain3003@gmail.com" className="group/item flex gap-3 sm:gap-4 md:gap-5 p-3 md:p-4 rounded-2xl hover:bg-[#252d24] transition-colors duration-300">
               <div className="flex-shrink-0 bg-gradient-to-br from-emerald-600 to-emerald-500 p-3 sm:p-4 rounded-xl text-white group-hover/item:shadow-lg group-hover/item:shadow-emerald-400/50 group-hover/item:scale-110 transition-all duration-300">
                 <Mail size={20} className="sm:hidden" />
                 <Mail size={24} className="hidden sm:block" />
               </div>
 
               <div>
-                <p className="text-sm text-gray-600 font-semibold">Email</p>
+                <p className="text-sm text-[#b8bdb2] font-semibold">Email</p>
                 <p className="text-sm sm:text-base md:text-lg font-semibold text-[#f4f3ee] group-hover/item:text-[#d7f77a] transition-colors break-all">
                   diyajain3003@gmail.com
                 </p>
               </div>
             </a>
 
-            <a href="tel:+917879963982" className="group/item flex gap-3 sm:gap-4 md:gap-5 p-3 md:p-4 rounded-2xl hover:bg-emerald-50 transition-all duration-300">
+            <a href="tel:+917879963982" className="group/item flex gap-3 sm:gap-4 md:gap-5 p-3 md:p-4 rounded-2xl hover:bg-[#252d24] transition-colors duration-300">
               <div className="flex-shrink-0 bg-gradient-to-br from-emerald-600 to-emerald-500 p-3 sm:p-4 rounded-xl text-white group-hover/item:shadow-lg group-hover/item:shadow-emerald-400/50 group-hover/item:scale-110 transition-all duration-300">
                 <Phone size={20} className="sm:hidden" />
                 <Phone size={24} className="hidden sm:block" />
               </div>
 
               <div>
-                <p className="text-sm text-gray-600 font-semibold">Phone</p>
+                <p className="text-sm text-[#b8bdb2] font-semibold">Phone</p>
                 <p className="text-sm sm:text-base md:text-lg font-semibold text-[#f4f3ee] group-hover/item:text-[#d7f77a] transition-colors">
                   +91 7879963982
                 </p>
               </div>
             </a>
 
-            <div className="group/item flex gap-3 sm:gap-4 md:gap-5 p-3 md:p-4 rounded-2xl hover:bg-emerald-50 transition-all duration-300">
+            <div className="group/item flex gap-3 sm:gap-4 md:gap-5 p-3 md:p-4 rounded-2xl hover:bg-[#252d24] transition-colors duration-300">
               <div className="flex-shrink-0 bg-gradient-to-br from-emerald-600 to-emerald-500 p-3 sm:p-4 rounded-xl text-white group-hover/item:shadow-lg group-hover/item:shadow-emerald-400/50 group-hover/item:scale-110 transition-all duration-300">
                 <MapPin size={20} className="sm:hidden" />
                 <MapPin size={24} className="hidden sm:block" />
               </div>
 
               <div>
-                <p className="text-sm text-gray-600 font-semibold">Location</p>
+                <p className="text-sm text-[#b8bdb2] font-semibold">Location</p>
                 <p className="text-sm sm:text-base md:text-lg font-semibold text-[#f4f3ee]">
                   Greater Noida, Uttar Pradesh
                 </p>
@@ -113,13 +113,13 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
 
           {/* Social */}
 
-          <div className="flex gap-4 mt-12 pt-8 border-t border-emerald-100">
+          <div className="flex gap-4 mt-12 pt-8 border-t border-[#3b4634]">
 
             <a
               href="https://github.com/Diyajain3"
               target="_blank"
               rel="noopener noreferrer"
-              className="group/social bg-gradient-to-br from-emerald-600 to-emerald-500 p-4 rounded-full text-white hover:from-emerald-700 hover:to-emerald-600 transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-emerald-400/50"
+              className="group/social bg-gradient-to-br from-emerald-600 to-emerald-500 p-4 rounded-full text-white transition-colors duration-300"
             >
               <Github size={20} className="group-hover/social:rotate-12 transition-transform duration-300" />
             </a>
@@ -128,7 +128,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
               href="https://www.linkedin.com/in/diya30jain/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group/social bg-gradient-to-br from-emerald-600 to-emerald-500 p-4 rounded-full text-white hover:from-emerald-700 hover:to-emerald-600 transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-emerald-400/50"
+              className="group/social bg-gradient-to-br from-emerald-600 to-emerald-500 p-4 rounded-full text-white transition-colors duration-300"
             >
               <Linkedin size={20} className="group-hover/social:rotate-12 transition-transform duration-300" />
             </a>
@@ -137,7 +137,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
               href="https://www.instagram.com/diya.3003/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group/social bg-gradient-to-br from-emerald-600 to-emerald-500 p-4 rounded-full text-white hover:from-emerald-700 hover:to-emerald-600 transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-emerald-400/50"
+              className="group/social bg-gradient-to-br from-emerald-600 to-emerald-500 p-4 rounded-full text-white transition-colors duration-300"
             >
               <Instagram size={20} className="group-hover/social:rotate-12 transition-transform duration-300" />
             </a>
@@ -149,7 +149,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
       <form
   ref={form}
   onSubmit={sendEmail}
-  className="group rounded-3xl bg-[#20221e] backdrop-blur-xl border border-[#2b2d28] shadow-xl hover:shadow-2xl hover:shadow-emerald-200/50 p-6 sm:p-10 space-y-6 transition-all duration-500 hover:-translate-y-2"
+  className="group rounded-3xl bg-[#20221e] border border-[#2b2d28] shadow-xl p-6 sm:p-10 space-y-6"
 >
 
           <div>
@@ -159,7 +159,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
   name="name"
   placeholder="John Doe"
   required
-              className="w-full rounded-xl border-2 border-emerald-200 p-4 outline-none focus:border-emerald-500 focus:bg-emerald-50 transition-all duration-300 font-medium"
+              className="w-full rounded-xl border border-[#3b4634] bg-[#151814] p-4 text-[#f4f3ee] outline-none placeholder:text-[#899184] focus:border-[#d7f77a] focus:bg-[#1b2118] transition-colors duration-300 font-medium"
             />
           </div>
 
@@ -170,7 +170,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
   name="email"
   placeholder="your@email.com"
   required
-              className="w-full rounded-xl border-2 border-emerald-200 p-4 outline-none focus:border-emerald-500 focus:bg-emerald-50 transition-all duration-300 font-medium"
+              className="w-full rounded-xl border border-[#3b4634] bg-[#151814] p-4 text-[#f4f3ee] outline-none placeholder:text-[#899184] focus:border-[#d7f77a] focus:bg-[#1b2118] transition-colors duration-300 font-medium"
             />
           </div>
 
@@ -181,7 +181,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
   name="title"
   placeholder="What is this about?"
   required
-              className="w-full rounded-xl border-2 border-emerald-200 p-4 outline-none focus:border-emerald-500 focus:bg-emerald-50 transition-all duration-300 font-medium"
+              className="w-full rounded-xl border border-[#3b4634] bg-[#151814] p-4 text-[#f4f3ee] outline-none placeholder:text-[#899184] focus:border-[#d7f77a] focus:bg-[#1b2118] transition-colors duration-300 font-medium"
             />
           </div>
 
@@ -198,7 +198,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
 
           <button
             type="submit"
-            className="group/btn w-full rounded-xl bg-gradient-to-r from-emerald-600 via-emerald-500 to-emerald-600 py-4 text-white font-bold flex justify-center items-center gap-3 hover:from-emerald-700 hover:via-emerald-600 hover:to-emerald-700 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-emerald-400/50 active:scale-95"
+            className="group/btn w-full rounded-xl bg-gradient-to-r from-emerald-600 via-emerald-500 to-emerald-600 py-4 text-white font-bold flex justify-center items-center gap-3 hover:from-emerald-500 hover:via-emerald-500 hover:to-emerald-500 transition-colors duration-300 active:opacity-90"
           >
             Send Message
 
