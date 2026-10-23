@@ -2,20 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Diya Portfolio",
-  description: "Portfolio built with Next.js",
+  title: "Diya Jain — Full Stack Developer",
+  description: "Portfolio of Diya Jain, a full-stack developer building useful things for the web with React, Node.js and modern databases.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en" className="scroll-smooth">
-      <body className="bg-white">
-        {children}
-      </body>
-    </html>
-  );
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return <html lang="en" className="scroll-smooth"><body>{children}</body></html>;
 }

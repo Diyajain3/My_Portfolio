@@ -6,22 +6,12 @@ import { ExternalLink, GitCommit } from "lucide-react";
 export default function Experience() {
   const expdata = [
     {
-      companyname: "CodeAlpha",
-      role: "Frontend Development Intern",
-      issueDate: "10 Sep 2025",
-      finishDate: "10 Oct 2025",
-      WhatIDid:
-        "Actively participated in CodeAlpha's internship program, working on frontend development tasks involving HTML, CSS, and JavaScript. Built and refined UI components, focused on responsive layouts, and improved my understanding of structuring and styling web pages efficiently. Completed all assigned tasks with dedication and consistency.",
-      certificateLink:
-        "https://drive.google.com/file/d/1GvXfzeMol0LoSl3ehnog23mCac_233Gq/view?usp=drive_link",
-    },
-    {
       companyname: "Codec Technologies Pvt. Ltd.",
       role: "MERN Stack Developer Intern",
-      issueDate: "15 Sep 2025",
-      finishDate: "15 Oct 2025",
+      issueDate: "Sep 2025",
+      finishDate: "Oct 2025",
       WhatIDid:
-        "Completed a 1-month AICTE & ICAC approved internship as a MERN Stack Developer Intern. Worked on building full-stack web applications using MongoDB, Express.js, React, and Node.js. Gained hands-on experience in developing REST APIs, connecting frontend components to backend services, managing databases, and deploying functional web features as part of real-world development tasks.",
+        "Completed an AICTE and ICAC-approved MERN Stack internship through the National Internship Portal, building full-stack features across the frontend and backend. Worked on RESTful API design, database integration, and reusable UI components under real-world deadlines and code-review standards.",
       certificateLink:
         "https://drive.google.com/file/d/1ndZYr1q52SQEWABePPxCJNZDNxoZlxtD/view?usp=drive_link",
     },
