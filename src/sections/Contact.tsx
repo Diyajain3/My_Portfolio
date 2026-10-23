@@ -69,7 +69,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
           <div className="space-y-6 md:space-y-8">
 
             <a href="mailto:diyajain3003@gmail.com" className="group/item flex gap-3 sm:gap-4 md:gap-5 p-3 md:p-4 rounded-2xl hover:bg-[#252d24] transition-colors duration-300">
-              <div className="flex-shrink-0 bg-gradient-to-br from-emerald-600 to-emerald-500 p-3 sm:p-4 rounded-xl text-white group-hover/item:shadow-lg group-hover/item:shadow-emerald-400/50 group-hover/item:scale-110 transition-all duration-300">
+              <div className="flex-shrink-0 bg-gradient-to-br from-emerald-600 to-emerald-500 p-3 sm:p-4 rounded-xl text-white transition-colors duration-300">
                 <Mail size={20} className="sm:hidden" />
                 <Mail size={24} className="hidden sm:block" />
               </div>
@@ -83,7 +83,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
             </a>
 
             <a href="tel:+917879963982" className="group/item flex gap-3 sm:gap-4 md:gap-5 p-3 md:p-4 rounded-2xl hover:bg-[#252d24] transition-colors duration-300">
-              <div className="flex-shrink-0 bg-gradient-to-br from-emerald-600 to-emerald-500 p-3 sm:p-4 rounded-xl text-white group-hover/item:shadow-lg group-hover/item:shadow-emerald-400/50 group-hover/item:scale-110 transition-all duration-300">
+              <div className="flex-shrink-0 bg-gradient-to-br from-emerald-600 to-emerald-500 p-3 sm:p-4 rounded-xl text-white transition-colors duration-300">
                 <Phone size={20} className="sm:hidden" />
                 <Phone size={24} className="hidden sm:block" />
               </div>
@@ -97,7 +97,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
             </a>
 
             <div className="group/item flex gap-3 sm:gap-4 md:gap-5 p-3 md:p-4 rounded-2xl hover:bg-[#252d24] transition-colors duration-300">
-              <div className="flex-shrink-0 bg-gradient-to-br from-emerald-600 to-emerald-500 p-3 sm:p-4 rounded-xl text-white group-hover/item:shadow-lg group-hover/item:shadow-emerald-400/50 group-hover/item:scale-110 transition-all duration-300">
+              <div className="flex-shrink-0 bg-gradient-to-br from-emerald-600 to-emerald-500 p-3 sm:p-4 rounded-xl text-white transition-colors duration-300">
                 <MapPin size={20} className="sm:hidden" />
                 <MapPin size={24} className="hidden sm:block" />
               </div>
@@ -121,7 +121,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
               rel="noopener noreferrer"
               className="group/social bg-gradient-to-br from-emerald-600 to-emerald-500 p-4 rounded-full text-white transition-colors duration-300"
             >
-              <Github size={20} className="group-hover/social:rotate-12 transition-transform duration-300" />
+              <Github size={20}  />
             </a>
 
             <a
@@ -130,7 +130,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
               rel="noopener noreferrer"
               className="group/social bg-gradient-to-br from-emerald-600 to-emerald-500 p-4 rounded-full text-white transition-colors duration-300"
             >
-              <Linkedin size={20} className="group-hover/social:rotate-12 transition-transform duration-300" />
+              <Linkedin size={20}  />
             </a>
 
             <a
@@ -139,7 +139,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
               rel="noopener noreferrer"
               className="group/social bg-gradient-to-br from-emerald-600 to-emerald-500 p-4 rounded-full text-white transition-colors duration-300"
             >
-              <Instagram size={20} className="group-hover/social:rotate-12 transition-transform duration-300" />
+              <Instagram size={20}  />
             </a>
           </div>
         </div>
@@ -192,7 +192,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
   rows={5}
   required
   placeholder="Tell me about your project..."
-              className="w-full rounded-xl border-2 border-emerald-200 p-4 outline-none focus:border-emerald-500 focus:bg-emerald-50 transition-all duration-300 resize-none font-medium"
+              className="w-full rounded-xl border border-[#3b4634] bg-[#151814] p-4 text-[#f4f3ee] outline-none placeholder:text-[#899184] focus:border-[#d7f77a] focus:bg-[#1b2118] transition-colors duration-300 resize-none font-medium"
             />
           </div>
 
