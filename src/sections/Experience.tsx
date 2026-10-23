@@ -54,7 +54,7 @@ export default function Experience() {
           <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-emerald-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent mb-4 animate-slideInDown">
             Experience
           </h2>
-          <p className="text-gray-700 text-lg">
+          <p className="text-[#c5c9bf] text-lg">
             Professional development experience and internships
           </p>
         </div>
@@ -85,7 +85,7 @@ export default function Experience() {
                 <div className="group rounded-2xl p-6 md:p-8 border border-[#2b2d28] bg-[#20221e] backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-emerald-400 hover:shadow-lg hover:shadow-emerald-200/50">
                   {/* Top bar */}
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600">
+                    <span className="text-xs font-semibold uppercase tracking-wider text-[#d7f77a]">
                       Internship {String(i + 1).padStart(2, "0")}
                     </span>
                     <span className="text-xs text-gray-600 font-medium">
@@ -97,9 +97,9 @@ export default function Experience() {
                     {exp.companyname}
                   </h3>
 
-                  <p className="text-base mb-4 text-emerald-600 font-semibold">{exp.role}</p>
+                  <p className="text-base mb-4 text-[#d7f77a] font-semibold">{exp.role}</p>
 
-                  <p className="text-sm leading-relaxed mb-6 text-gray-700">
+                  <p className="text-sm leading-relaxed mb-6 text-[#c5c9bf]">
                     {exp.WhatIDid}
                   </p>
 
@@ -107,7 +107,7 @@ export default function Experience() {
                     href={exp.certificateLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-semibold px-5 py-2.5 rounded-lg border-2 border-emerald-600 text-emerald-600 hover:bg-emerald-600 hover:text-white transition-all duration-300 hover:shadow-md hover:shadow-emerald-200"
+                    className="inline-flex items-center gap-2 text-sm font-semibold px-5 py-2.5 rounded-lg border-2 border-emerald-600 text-[#d7f77a] hover:bg-emerald-600 hover:text-white transition-all duration-300 hover:shadow-md hover:shadow-emerald-200"
                   >
                     View Certificate
                     <ExternalLink size={16} />

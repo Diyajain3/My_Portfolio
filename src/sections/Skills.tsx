@@ -59,7 +59,7 @@ export default function Skills() {
         {/* Header */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 border border-emerald-200 mb-4">
-            <Code2 size={18} className="text-emerald-600" />
+            <Code2 size={18} className="text-[#d7f77a]" />
             <span className="text-sm font-bold text-emerald-700 tracking-wide">
               MY TECH STACK
             </span>
@@ -67,7 +67,7 @@ export default function Skills() {
           <h2 className="text-4xl md:text-5xl font-extrabold text-[#f4f3ee] mb-3">
             Skills &amp; Technologies
           </h2>
-          <p className="text-base text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base text-[#b8bdb2] max-w-2xl mx-auto leading-relaxed">
             Tools and technologies I use to build modern, responsive and scalable
             web applications.
           </p>

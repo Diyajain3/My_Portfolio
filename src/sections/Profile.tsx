@@ -257,7 +257,7 @@ const DifficultyRing: React.FC<DifficultyRingProps> = ({
                 <span className="text-xs font-bold font-Outfit" style={{ color }}>
                     {label}
                 </span>
-                <p className="text-[10px] text-gray-500 font-Outfit">
+                <p className="text-[10px] text-[#a7aaa0] font-Outfit">
                     {solved}/{total}
                 </p>
             </div>
@@ -335,7 +335,7 @@ const Profile: React.FC = () => {
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.1, duration: 0.4 }}
                 viewport={{ once: true }}
-                className="text-center mb-2 text-base sm:text-lg font-Ovo text-emerald-600"
+                className="text-center mb-2 text-base sm:text-lg font-Ovo text-[#d7f77a]"
             >
                 Competitive Programming
             </motion.h4>
@@ -413,7 +413,7 @@ const Profile: React.FC = () => {
                                     <div className="text-lg sm:text-xl font-bold text-[#f4f3ee] font-Outfit">
                                         {loading ? '—' : s.val.count}
                                     </div>
-                                    <div className="text-[10px] text-gray-500 font-Ovo">{s.label}</div>
+                                    <div className="text-[10px] text-[#a7aaa0] font-Ovo">{s.label}</div>
                                 </div>
                             ))}
                             <div ref={maxStreak.ref} className="text-center">
@@ -423,10 +423,10 @@ const Profile: React.FC = () => {
                                         animate={prefersReducedMotion ? {} : { scale: [1, 1.2, 1] }}
                                         transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
                                     >
-                                        <Flame size={16} className="text-green-600" fill="currentColor" />
+                                        <Flame size={16} className="text-[#d7f77a]" fill="currentColor" />
                                     </motion.span>
                                 </div>
-                                <div className="text-[10px] text-gray-500 font-Ovo">Streak</div>
+                                <div className="text-[10px] text-[#a7aaa0] font-Ovo">Streak</div>
                             </div>
                         </div>
                     </div>
@@ -441,7 +441,7 @@ const Profile: React.FC = () => {
                 >
                     <div ref={heatmapScrollRef} className="w-full overflow-x-auto heatmap-scroll">
                         <div className="flex items-center mb-2">
-                            <h3 className="text-xs font-semibold text-gray-500 font-Outfit">
+                            <h3 className="text-xs font-semibold text-[#a7aaa0] font-Outfit">
                                 <span className="text-base font-bold text-[#f4f3ee]">
                                     {loading ? '—' : stats.totalSubmissions}
                                 </span>{' '}
@@ -458,7 +458,7 @@ const Profile: React.FC = () => {
                                 <div className="overflow-x-auto pb-12">
                                     <div className="inline-flex flex-col min-w-min">
                                         {/* Months Row */}
-                                        <div className="flex gap-[3px] mb-2 text-gray-500 font-Outfit select-none relative h-5">
+                                        <div className="flex gap-[3px] mb-2 text-[#a7aaa0] font-Outfit select-none relative h-5">
                                             {heatmap.map((week, wi) => {
                                                 const currentMonth = getWeekMonthName(wi)
                                                 const prevMonth = wi > 0 ? getWeekMonthName(wi - 1) : null
@@ -473,7 +473,7 @@ const Profile: React.FC = () => {
                                                         }}
                                                     >
                                                         {isMonthStart && (
-                                                            <span className="absolute left-0 bottom-0 whitespace-nowrap text-[8px] sm:text-[9px] font-bold text-gray-500">
+                                                            <span className="absolute left-0 bottom-0 whitespace-nowrap text-[8px] sm:text-[9px] font-bold text-[#a7aaa0]">
                                                                 {currentMonth}
                                                             </span>
                                                         )}
@@ -521,7 +521,7 @@ const Profile: React.FC = () => {
                                     </div>
                                 </div>
 
-                                <div className="flex items-center gap-1 mt-2 text-[7px] sm:text-[8px] md:text-[9px] text-gray-400">
+                                <div className="flex items-center gap-1 mt-2 text-[7px] sm:text-[8px] md:text-[9px] text-[#8f958a]">
                                     <span>Less</span>
                                     {[0, 1, 2, 4, 7].map((v) => (
                                         <div
@@ -550,7 +550,7 @@ const Profile: React.FC = () => {
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.98 }}
-                        className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-emerald-600 text-sm text-emerald-700 hover:bg-emerald-50 transition-all duration-300 font-Outfit"
+                        className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-emerald-600 text-sm text-[#d7f77a] hover:bg-[#20221e] transition-all duration-300 font-Outfit"
                     >
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="opacity-70">
                             <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l.842.742a1.38 1.38 0 0 0 1.913-.064 1.366 1.366 0 0 0-.063-1.93l-.842-.74c-2.09-1.791-5.159-1.421-6.924.881L5.104 9.594l4.391-4.691A1.383 1.383 0 0 0 9.14 3.36L13.64.258a1.38 1.38 0 0 0-.157-.258ZM19.78 5.71a1.374 1.374 0 0 0-.961.438l-.12.128c-.246.26-.38.608-.38.97a1.376 1.376 0 0 0 .443.99l.842.742c.652.64.972 1.469.947 2.264a2.68 2.68 0 0 1-.066.523 2.545 2.545 0 0 1-.619 1.164l-2.982 3.19c-1.058 1.134-3.204 1.27-4.43.278l-.842-.742a1.38 1.38 0 0 0-1.913.064 1.366 1.366 0 0 0 .063 1.93l.842.74c2.09 1.791 5.159 1.421 6.924-.881l2.982-3.19a5.266 5.266 0 0 0 1.209-2.104 5.35 5.35 0 0 0 .125-.513 5.527 5.527 0 0 0-.062-2.362 5.83 5.83 0 0 0-.349-1.017 5.938 5.938 0 0 0-1.271-1.818l-.842-.742a1.38 1.38 0 0 0-.953-.389Z" />

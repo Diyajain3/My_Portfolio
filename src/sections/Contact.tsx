@@ -52,7 +52,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
           Get In Touch
         </h2>
 
-        <p className="mt-4 md:mt-6 text-gray-700 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+        <p className="mt-4 md:mt-6 text-[#c5c9bf] text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
           Have a project in mind or just want to say hello? I&apos;d love to hear from you. Let&apos;s collaborate and create something amazing together!
         </p>
       </div>
@@ -76,7 +76,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
 
               <div>
                 <p className="text-sm text-gray-600 font-semibold">Email</p>
-                <p className="text-sm sm:text-base md:text-lg font-semibold text-[#f4f3ee] group-hover/item:text-emerald-700 transition-colors break-all">
+                <p className="text-sm sm:text-base md:text-lg font-semibold text-[#f4f3ee] group-hover/item:text-[#d7f77a] transition-colors break-all">
                   diyajain3003@gmail.com
                 </p>
               </div>
@@ -90,7 +90,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
 
               <div>
                 <p className="text-sm text-gray-600 font-semibold">Phone</p>
-                <p className="text-sm sm:text-base md:text-lg font-semibold text-[#f4f3ee] group-hover/item:text-emerald-700 transition-colors">
+                <p className="text-sm sm:text-base md:text-lg font-semibold text-[#f4f3ee] group-hover/item:text-[#d7f77a] transition-colors">
                   +91 7879963982
                 </p>
               </div>
@@ -210,7 +210,7 @@ const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
         </form>
       </div>
 
-      <p className="text-center text-gray-700 mt-12 text-lg font-medium relative z-10">
+      <p className="text-center text-[#c5c9bf] mt-12 text-lg font-medium relative z-10">
         Thank you for taking the time to explore my portfolio. Looking forward to connecting with you!
       </p>
     </section>

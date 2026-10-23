@@ -69,7 +69,7 @@ export default function Service() {
             My Services
           </h1>
 
-          <p className="mt-6 text-gray-700 leading-relaxed text-lg">
+          <p className="mt-6 text-[#c5c9bf] leading-relaxed text-lg">
             I create modern, responsive and high-performance web solutions that help businesses grow online. From personal portfolios to complete e-commerce platforms, every project is designed with performance, scalability and user experience in mind.
           </p>
         </div>
@@ -112,7 +112,7 @@ export default function Service() {
                 </h2>
 
                 {/* Description */}
-                <p className="relative z-10 mt-4 leading-relaxed text-gray-700">
+                <p className="relative z-10 mt-4 leading-relaxed text-[#c5c9bf]">
                   {service.myApproach}
                 </p>
 
@@ -124,7 +124,7 @@ export default function Service() {
                         Skills Used
                       </h3>
 
-                      <p className="mt-3 leading-relaxed text-gray-700">
+                      <p className="mt-3 leading-relaxed text-[#c5c9bf]">
                         {service.skillUsed}
                       </p>
                     </div>
@@ -134,7 +134,7 @@ export default function Service() {
                         What You Get
                       </h3>
 
-                      <p className="mt-3 leading-relaxed text-gray-700">
+                      <p className="mt-3 leading-relaxed text-[#c5c9bf]">
                         {service.whatYouGet}
                       </p>
                     </div>
@@ -143,7 +143,7 @@ export default function Service() {
                 ) : (
                   <button
                     onClick={() => setOpenIndex(index)}
-                    className="relative z-10 mt-8 flex items-center gap-2 font-semibold text-emerald-600 transition-all duration-300 hover:text-emerald-700 group/btn"
+                    className="relative z-10 mt-8 flex items-center gap-2 font-semibold text-[#d7f77a] transition-all duration-300 hover:text-emerald-700 group/btn"
                   >
                     Show More
                     <MoveRight
