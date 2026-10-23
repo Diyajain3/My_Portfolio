@@ -84,30 +84,30 @@ export default function Service() {
             return (
               <div
                 key={index}
-                className="group relative overflow-hidden rounded-2xl border border-[#2b2d28] bg-[#20221e] backdrop-blur-sm p-6 sm:p-8 shadow-lg transition-all duration-500 hover:-translate-y-4 hover:border-emerald-400 hover:shadow-2xl hover:shadow-emerald-200/50"
+                className="group relative overflow-hidden rounded-2xl border border-[#2b2d28] bg-[#20221e] backdrop-blur-sm p-6 sm:p-8 shadow-lg transition-colors duration-300"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
 
                 {/* Gradient overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#d7f77a]/[0.03] to-transparent pointer-events-none"></div>
 
                 {/* Close Button */}
                 {isOpen && (
                   <button
                     onClick={() => setOpenIndex(null)}
-                    className="absolute right-5 top-5 rounded-full bg-emerald-100 p-2 transition-all duration-300 hover:bg-emerald-500 hover:text-white hover:scale-110 z-20"
+                    className="absolute right-5 top-5 rounded-full bg-[#2b3525] p-2 text-[#d7f77a] transition-colors duration-300 hover:bg-[#3b4634] z-20"
                   >
                     <X size={18} />
                   </button>
                 )}
 
                 {/* Icon */}
-                <div className="relative z-10 flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-600 to-emerald-500 text-white transition-all duration-500 group-hover:scale-125 group-hover:rotate-12 group-hover:shadow-lg group-hover:shadow-emerald-400/50">
+                <div className="relative z-10 flex h-20 w-20 items-center justify-center rounded-2xl bg-[#2b3525] text-[#d7f77a]">
                   <Icon size={32} />
                 </div>
 
                 {/* Title */}
-                <h2 className="relative z-10 mt-6 text-2xl font-bold text-[#f4f3ee] group-hover:text-emerald-700 transition-colors duration-300">
+                <h2 className="relative z-10 mt-6 text-2xl font-bold text-[#f4f3ee]">
                   {service.serviceName}
                 </h2>
 
@@ -143,7 +143,7 @@ export default function Service() {
                 ) : (
                   <button
                     onClick={() => setOpenIndex(index)}
-                    className="relative z-10 mt-8 flex items-center gap-2 font-semibold text-[#d7f77a] transition-all duration-300 hover:text-emerald-700 group/btn"
+                    className="relative z-10 mt-8 flex items-center gap-2 font-semibold text-[#d7f77a] transition-colors duration-300 hover:text-[#f4f3ee] group/btn"
                   >
                     Show More
                     <MoveRight

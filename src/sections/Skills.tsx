@@ -58,7 +58,7 @@ export default function Skills() {
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 border border-emerald-200 mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#202b1c] border border-[#3a4b2d] mb-4">
             <Code2 size={18} className="text-[#d7f77a]" />
             <span className="text-sm font-bold text-emerald-700 tracking-wide">
               MY TECH STACK
@@ -86,7 +86,7 @@ export default function Skills() {
               >
                 <Icon size={30} style={{ color }} />
               </div>
-              <span className="text-sm font-semibold text-gray-800 group-hover:text-emerald-700 transition-colors">
+              <span className="text-sm font-semibold text-[#f4f3ee] transition-colors">
                 {name}
               </span>
             </div>

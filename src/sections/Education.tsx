@@ -59,7 +59,7 @@ const y = useTransform(smoothProgress, [0, 1], [0, Math.max(0, timelineHeight - 
       </h1>
 
       
-      <div ref={ref} className="timeline">
+      <div ref={ref} className="timeline mt-16 space-y-8">
         <motion.div
   className="moving-dot"
   style={{ y }}
